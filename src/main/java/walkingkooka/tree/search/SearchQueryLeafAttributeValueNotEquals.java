@@ -26,14 +26,14 @@ import java.util.Objects;
  */
 final class SearchQueryLeafAttributeValueNotEquals extends SearchQueryLeafAttribute {
 
-    static SearchQueryLeafAttributeValueNotEquals with(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueNotEquals with(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         Objects.requireNonNull(attributeName, "attributeName");
         Objects.requireNonNull(caseSensitivity, "caseSensitivity");
 
         return new SearchQueryLeafAttributeValueNotEquals(value, attributeName, caseSensitivity);
     }
 
-    private SearchQueryLeafAttributeValueNotEquals(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    private SearchQueryLeafAttributeValueNotEquals(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         super(value, attributeName, caseSensitivity);
     }
 

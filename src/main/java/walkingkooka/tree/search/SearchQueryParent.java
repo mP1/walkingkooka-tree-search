@@ -24,7 +24,7 @@ abstract class SearchQueryParent extends SearchQuery {
     }
 
     @Override
-    final void visit(final SearchMetaNode node, final SearchQueryContext context) {
+    final void visit(final MetaSearchNode node, final SearchQueryContext context) {
         node.select(this, context);
     }
 }

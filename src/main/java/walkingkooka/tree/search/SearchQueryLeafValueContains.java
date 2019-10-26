@@ -27,15 +27,15 @@ import java.util.Objects;
 /**
  * Searches the text of a {@link SearchQueryValue} if it contains text.
  */
-final class SearchQueryLeafValueContains extends SearchQueryLeaf<SearchTextQueryValue> {
+final class SearchQueryLeafValueContains extends SearchQueryLeaf<TextSearchQueryValue> {
 
-    static SearchQueryLeafValueContains with(final SearchTextQueryValue value, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafValueContains with(final TextSearchQueryValue value, final CaseSensitivity caseSensitivity) {
         Objects.requireNonNull(caseSensitivity, "caseSensitivity");
 
         return new SearchQueryLeafValueContains(value, caseSensitivity);
     }
 
-    private SearchQueryLeafValueContains(final SearchTextQueryValue value, final CaseSensitivity caseSensitivity) {
+    private SearchQueryLeafValueContains(final TextSearchQueryValue value, final CaseSensitivity caseSensitivity) {
         super(value);
         this.caseSensitivity = caseSensitivity;
     }
@@ -46,52 +46,52 @@ final class SearchQueryLeafValueContains extends SearchQueryLeaf<SearchTextQuery
     }
 
     @Override
-    final void visit(final SearchBigDecimalNode node, final SearchQueryContext context) {
+    final void visit(final BigDecimalSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchBigIntegerNode node, final SearchQueryContext context) {
+    final void visit(final BigIntegerSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchDoubleNode node, final SearchQueryContext context) {
+    final void visit(final DoubleSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchLocalDateNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchLocalDateTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchLocalTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalTimeSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchLongNode node, final SearchQueryContext context) {
+    final void visit(final LongSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final SearchMetaNode node, final SearchQueryContext context) {
+    final void visit(final MetaSearchNode node, final SearchQueryContext context) {
         node.select(this, context);
     }
 
     @Override
-    final void visit(final SearchTextNode node, final SearchQueryContext context) {
+    final void visit(final TextSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     /**
-     * Scans the text of the given {@link SearchNode} honouring the {@link CaseSensitivity}, making {@link SearchTextNode}
+     * Scans the text of the given {@link SearchNode} honouring the {@link CaseSensitivity}, making {@link TextSearchNode}
      * from each match.
      */
     private void visit0(final SearchNode node, final SearchQueryContext context) {
@@ -114,7 +114,7 @@ final class SearchQueryLeafValueContains extends SearchQueryLeaf<SearchTextQuery
                         extracted);
 
                 if (current.isSequence()) {
-                    final SearchSequenceNode sequence = current.cast();
+                    final SequenceSearchNode sequence = current.cast();
 
                     final List<SearchNode> newChildren = Lists.array();
                     newChildren.addAll(sequence.children());
@@ -123,7 +123,7 @@ final class SearchQueryLeafValueContains extends SearchQueryLeaf<SearchTextQuery
                     final SearchNode last = newChildren.get(lastIndex);
                     if (last.isSequence()) {
                         newChildren.remove(lastIndex);
-                        final SearchSequenceNode lastAsSequence = last.cast();
+                        final SequenceSearchNode lastAsSequence = last.cast();
                         newChildren.addAll(lastAsSequence.children());
                     }
 

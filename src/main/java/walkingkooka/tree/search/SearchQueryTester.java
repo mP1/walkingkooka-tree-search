@@ -28,21 +28,21 @@ abstract class SearchQueryTester<T> {
 
     abstract SearchQueryTester not();
 
-    abstract boolean test(final SearchBigDecimalNode node);
+    abstract boolean test(final BigDecimalSearchNode node);
 
-    abstract boolean test(final SearchBigIntegerNode node);
+    abstract boolean test(final BigIntegerSearchNode node);
 
-    abstract boolean test(final SearchDoubleNode node);
+    abstract boolean test(final DoubleSearchNode node);
 
-    abstract boolean test(final SearchLocalDateNode node);
+    abstract boolean test(final LocalDateSearchNode node);
 
-    abstract boolean test(final SearchLocalDateTimeNode node);
+    abstract boolean test(final LocalDateTimeSearchNode node);
 
-    abstract boolean test(final SearchLocalTimeNode node);
+    abstract boolean test(final LocalTimeSearchNode node);
 
-    abstract boolean test(final SearchLongNode node);
+    abstract boolean test(final LongSearchNode node);
 
-    abstract boolean test(final SearchTextNode node);
+    abstract boolean test(final TextSearchNode node);
 
     final T value;
 

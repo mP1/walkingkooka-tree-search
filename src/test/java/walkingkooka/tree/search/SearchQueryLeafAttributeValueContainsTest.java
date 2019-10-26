@@ -66,7 +66,7 @@ public final class SearchQueryLeafAttributeValueContainsTest extends SearchQuery
     }
 
     @Override
-    SearchQueryLeafAttributeValueContains createSearchQuery(final SearchTextQueryValue queryValue,
+    SearchQueryLeafAttributeValueContains createSearchQuery(final TextSearchQueryValue queryValue,
                                                             final SearchNodeAttributeName attributeName,
                                                             final CaseSensitivity sensitivity) {
         return SearchQueryLeafAttributeValueContains.with(queryValue, attributeName, sensitivity);

@@ -28,7 +28,6 @@ import walkingkooka.reflect.PublicStaticFactoryTesting;
 import walkingkooka.text.HasTextLengthTesting;
 import walkingkooka.text.HasTextTesting;
 import walkingkooka.tree.HasTextOffsetTesting;
-import walkingkooka.tree.Node;
 import walkingkooka.tree.NodeTesting;
 
 import java.lang.reflect.Method;
@@ -54,8 +53,8 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
     @Test
     public final void testPublicStaticFactoryMethod() {
         PublicStaticFactoryTesting.check(SearchNode.class,
-                "Search",
-                Node.class,
+                "",
+                SearchNode.class,
                 this.type());
     }
 
@@ -156,18 +155,11 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
 
     abstract SearchNode differentSearchNode();
 
-    @Override
-    public Class<SearchNode> type() {
-        return Cast.to(this.searchNodeType());
-    }
-
-    abstract Class<N> searchNodeType();
-
-    final SearchTextNode text(final String text) {
+    final TextSearchNode text(final String text) {
         return SearchNode.text(text, text);
     }
 
-    final SearchSequenceNode sequence(final SearchNode... children) {
+    final SequenceSearchNode sequence(final SearchNode... children) {
         return SearchNode.sequence(Lists.of(children));
     }
 
@@ -178,7 +170,7 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
     }
 
     final void replaceSelectedAndCheck(final SearchNode node,
-                                       final Function<SearchSelectNode, SearchNode> replacer,
+                                       final Function<SelectSearchNode, SearchNode> replacer,
                                        final SearchNode expected) {
         assertEquals(expected, node.replaceSelected(replacer), node.toString());
     }
@@ -188,13 +180,22 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
     }
 
     final void replaceSelectedNothingAndCheck(final SearchNode node,
-                                              final Function<SearchSelectNode, SearchNode> replacer) {
+                                              final Function<SelectSearchNode, SearchNode> replacer) {
         assertSame(node, node.replaceSelected(replacer), node.toString());
     }
 
+    // ClassTestCase....................................................................................................
+
     @Override
-    public final String typeNamePrefix() {
-        return "Search";
+    public Class<SearchNode> type() {
+        return Cast.to(this.searchNodeType());
+    }
+
+    abstract Class<N> searchNodeType();
+
+    @Override
+    public final JavaVisibility typeVisibility() {
+        return JavaVisibility.PUBLIC;
     }
 
     // IsMethodTesting.................................................................................................
@@ -206,12 +207,12 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
 
     @Override
     public final String isMethodTypeNamePrefix() {
-        return "Search";
+        return "";
     }
 
     @Override
     public final String isMethodTypeNameSuffix() {
-        return Node.class.getSimpleName();
+        return SearchNode.class.getSimpleName();
     }
 
     @Override
@@ -219,10 +220,15 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
         return (m) -> m.equals("isRoot");
     }
 
-    // ClassTestCase.........................................................................................
+    // TypeNameTesting..................................................................................................
 
     @Override
-    public final JavaVisibility typeVisibility() {
-        return JavaVisibility.PUBLIC;
+    public final String typeNamePrefix() {
+        return "";
+    }
+
+    @Override
+    public final String typeNameSuffix() {
+        return SearchNode.class.getSimpleName();
     }
 }

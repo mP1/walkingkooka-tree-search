@@ -66,7 +66,7 @@ public final class SearchQueryLeafAttributeValueEqualsTest extends SearchQueryLe
     }
 
     @Override
-    SearchQueryLeafAttributeValueEquals createSearchQuery(final SearchTextQueryValue queryValue,
+    SearchQueryLeafAttributeValueEquals createSearchQuery(final TextSearchQueryValue queryValue,
                                                           final SearchNodeAttributeName attributeName,
                                                           final CaseSensitivity sensitivity) {
         return SearchQueryLeafAttributeValueEquals.with(queryValue, attributeName, sensitivity);

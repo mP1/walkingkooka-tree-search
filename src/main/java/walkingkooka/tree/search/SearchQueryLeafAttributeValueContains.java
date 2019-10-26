@@ -26,14 +26,14 @@ import java.util.Objects;
  */
 final class SearchQueryLeafAttributeValueContains extends SearchQueryLeafAttribute {
 
-    static SearchQueryLeafAttributeValueContains with(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueContains with(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         Objects.requireNonNull(attributeName, "attributeName");
         Objects.requireNonNull(caseSensitivity, "caseSensitivity");
 
         return new SearchQueryLeafAttributeValueContains(value, attributeName, caseSensitivity);
     }
 
-    private SearchQueryLeafAttributeValueContains(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    private SearchQueryLeafAttributeValueContains(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         super(value, attributeName, caseSensitivity);
     }
 

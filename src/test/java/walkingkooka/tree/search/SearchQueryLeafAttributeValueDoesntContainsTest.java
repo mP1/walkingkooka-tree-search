@@ -66,7 +66,7 @@ public final class SearchQueryLeafAttributeValueDoesntContainsTest extends Searc
     }
 
     @Override
-    SearchQueryLeafAttributeValueDoesntContains createSearchQuery(final SearchTextQueryValue queryValue,
+    SearchQueryLeafAttributeValueDoesntContains createSearchQuery(final TextSearchQueryValue queryValue,
                                                                   final SearchNodeAttributeName attributeName,
                                                                   final CaseSensitivity sensitivity) {
         return SearchQueryLeafAttributeValueDoesntContains.with(queryValue, attributeName, sensitivity);

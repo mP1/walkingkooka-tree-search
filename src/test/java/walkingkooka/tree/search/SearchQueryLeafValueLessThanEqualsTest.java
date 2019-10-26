@@ -26,7 +26,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigDecimalLess() {
-        final SearchBigDecimalNode node = this.bigDecimalNode(VALUE_LT);
+        final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_LT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -34,7 +34,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigDecimalEqual() {
-        final SearchBigDecimalNode node = this.bigDecimalNode(VALUE);
+        final BigDecimalSearchNode node = this.bigDecimalNode(VALUE);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -42,7 +42,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigDecimalGreater() {
-        final SearchBigDecimalNode node = this.bigDecimalNode(VALUE_GT);
+        final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_GT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -53,9 +53,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigDecimalNode eq = this.bigDecimalNode(VALUE);
-        final SearchBigDecimalNode lt = this.bigDecimalNode(VALUE_LT);
-        final SearchBigDecimalNode gt = this.bigDecimalNode(VALUE_GT);
+        final BigDecimalSearchNode eq = this.bigDecimalNode(VALUE);
+        final BigDecimalSearchNode lt = this.bigDecimalNode(VALUE_LT);
+        final BigDecimalSearchNode gt = this.bigDecimalNode(VALUE_GT);
 
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -68,9 +68,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigDecimalNode eq = this.bigDecimalNode(VALUE);
-        final SearchBigDecimalNode lt = this.bigDecimalNode(VALUE_LT);
-        final SearchBigDecimalNode gt = this.bigDecimalNode(VALUE_GT);
+        final BigDecimalSearchNode eq = this.bigDecimalNode(VALUE);
+        final BigDecimalSearchNode lt = this.bigDecimalNode(VALUE_LT);
+        final BigDecimalSearchNode gt = this.bigDecimalNode(VALUE_GT);
 
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -83,17 +83,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigDecimalNode eq = this.bigDecimalNode(VALUE);
-        final SearchBigDecimalNode lt = this.bigDecimalNode(VALUE_LT);
-        final SearchBigDecimalNode gt = this.bigDecimalNode(VALUE_GT);
+        final BigDecimalSearchNode eq = this.bigDecimalNode(VALUE);
+        final BigDecimalSearchNode lt = this.bigDecimalNode(VALUE_LT);
+        final BigDecimalSearchNode gt = this.bigDecimalNode(VALUE_GT);
 
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -103,7 +103,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigDecimalLessNot() {
-        final SearchBigDecimalNode node = this.bigDecimalNode(VALUE_LT);
+        final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_LT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -113,7 +113,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigIntegerLess() {
-        final SearchBigIntegerNode node = this.bigIntegerNode(VALUE_LT);
+        final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_LT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -121,7 +121,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigIntegerEqual() {
-        final SearchBigIntegerNode node = this.bigIntegerNode(VALUE);
+        final BigIntegerSearchNode node = this.bigIntegerNode(VALUE);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -129,7 +129,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigIntegerGreater() {
-        final SearchBigIntegerNode node = this.bigIntegerNode(VALUE_GT);
+        final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_GT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -140,9 +140,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigIntegerNode eq = this.bigIntegerNode(VALUE);
-        final SearchBigIntegerNode lt = this.bigIntegerNode(VALUE_LT);
-        final SearchBigIntegerNode gt = this.bigIntegerNode(VALUE_GT);
+        final BigIntegerSearchNode eq = this.bigIntegerNode(VALUE);
+        final BigIntegerSearchNode lt = this.bigIntegerNode(VALUE_LT);
+        final BigIntegerSearchNode gt = this.bigIntegerNode(VALUE_GT);
 
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -155,9 +155,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigIntegerNode eq = this.bigIntegerNode(VALUE);
-        final SearchBigIntegerNode lt = this.bigIntegerNode(VALUE_LT);
-        final SearchBigIntegerNode gt = this.bigIntegerNode(VALUE_GT);
+        final BigIntegerSearchNode eq = this.bigIntegerNode(VALUE);
+        final BigIntegerSearchNode lt = this.bigIntegerNode(VALUE_LT);
+        final BigIntegerSearchNode gt = this.bigIntegerNode(VALUE_GT);
 
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -170,17 +170,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchBigIntegerNode eq = this.bigIntegerNode(VALUE);
-        final SearchBigIntegerNode lt = this.bigIntegerNode(VALUE_LT);
-        final SearchBigIntegerNode gt = this.bigIntegerNode(VALUE_GT);
+        final BigIntegerSearchNode eq = this.bigIntegerNode(VALUE);
+        final BigIntegerSearchNode lt = this.bigIntegerNode(VALUE_LT);
+        final BigIntegerSearchNode gt = this.bigIntegerNode(VALUE_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -190,7 +190,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testBigIntegerLessNot() {
-        final SearchBigIntegerNode node = this.bigIntegerNode(VALUE_LT);
+        final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_LT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -200,7 +200,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testDoubleLess() {
-        final SearchDoubleNode node = this.doubleNode(VALUE_LT);
+        final DoubleSearchNode node = this.doubleNode(VALUE_LT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -208,7 +208,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testDoubleEqual() {
-        final SearchDoubleNode node = this.doubleNode(VALUE);
+        final DoubleSearchNode node = this.doubleNode(VALUE);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -216,7 +216,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testDoubleGreater() {
-        final SearchDoubleNode node = this.doubleNode(VALUE_GT);
+        final DoubleSearchNode node = this.doubleNode(VALUE_GT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -227,9 +227,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchDoubleNode eq = this.doubleNode(VALUE);
-        final SearchDoubleNode lt = this.doubleNode(VALUE_LT);
-        final SearchDoubleNode gt = this.doubleNode(VALUE_GT);
+        final DoubleSearchNode eq = this.doubleNode(VALUE);
+        final DoubleSearchNode lt = this.doubleNode(VALUE_LT);
+        final DoubleSearchNode gt = this.doubleNode(VALUE_GT);
 
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -242,9 +242,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchDoubleNode eq = this.doubleNode(VALUE);
-        final SearchDoubleNode lt = this.doubleNode(VALUE_LT);
-        final SearchDoubleNode gt = this.doubleNode(VALUE_GT);
+        final DoubleSearchNode eq = this.doubleNode(VALUE);
+        final DoubleSearchNode lt = this.doubleNode(VALUE_LT);
+        final DoubleSearchNode gt = this.doubleNode(VALUE_GT);
 
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -257,17 +257,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchDoubleNode eq = this.doubleNode(VALUE);
-        final SearchDoubleNode lt = this.doubleNode(VALUE_LT);
-        final SearchDoubleNode gt = this.doubleNode(VALUE_GT);
+        final DoubleSearchNode eq = this.doubleNode(VALUE);
+        final DoubleSearchNode lt = this.doubleNode(VALUE_LT);
+        final DoubleSearchNode gt = this.doubleNode(VALUE_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -277,7 +277,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testDoubleLessNot() {
-        final SearchDoubleNode node = this.doubleNode(VALUE_LT);
+        final DoubleSearchNode node = this.doubleNode(VALUE_LT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -287,7 +287,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateLess() {
-        final SearchLocalDateNode node = this.localDateNode(DATE_LT);
+        final LocalDateSearchNode node = this.localDateNode(DATE_LT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -295,7 +295,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateEqual() {
-        final SearchLocalDateNode node = this.localDateNode(DATE);
+        final LocalDateSearchNode node = this.localDateNode(DATE);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -303,7 +303,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateGreater() {
-        final SearchLocalDateNode node = this.localDateNode(DATE_GT);
+        final LocalDateSearchNode node = this.localDateNode(DATE_GT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -314,9 +314,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateNode eq = this.localDateNode(DATE);
-        final SearchLocalDateNode lt = this.localDateNode(DATE_LT);
-        final SearchLocalDateNode gt = this.localDateNode(DATE_GT);
+        final LocalDateSearchNode eq = this.localDateNode(DATE);
+        final LocalDateSearchNode lt = this.localDateNode(DATE_LT);
+        final LocalDateSearchNode gt = this.localDateNode(DATE_GT);
 
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -329,9 +329,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateNode eq = this.localDateNode(DATE);
-        final SearchLocalDateNode lt = this.localDateNode(DATE_LT);
-        final SearchLocalDateNode gt = this.localDateNode(DATE_GT);
+        final LocalDateSearchNode eq = this.localDateNode(DATE);
+        final LocalDateSearchNode lt = this.localDateNode(DATE_LT);
+        final LocalDateSearchNode gt = this.localDateNode(DATE_GT);
 
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -344,17 +344,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateNode eq = this.localDateNode(DATE);
-        final SearchLocalDateNode lt = this.localDateNode(DATE_LT);
-        final SearchLocalDateNode gt = this.localDateNode(DATE_GT);
+        final LocalDateSearchNode eq = this.localDateNode(DATE);
+        final LocalDateSearchNode lt = this.localDateNode(DATE_LT);
+        final LocalDateSearchNode gt = this.localDateNode(DATE_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -364,7 +364,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateLessNot() {
-        final SearchLocalDateNode node = this.localDateNode(DATE_LT);
+        final LocalDateSearchNode node = this.localDateNode(DATE_LT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -374,7 +374,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateTimeLess() {
-        final SearchLocalDateTimeNode node = this.localDateTimeNode(DATETIME_LT);
+        final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_LT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -382,7 +382,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateTimeEqual() {
-        final SearchLocalDateTimeNode node = this.localDateTimeNode(DATETIME);
+        final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -390,7 +390,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateTimeGreater() {
-        final SearchLocalDateTimeNode node = this.localDateTimeNode(DATETIME_GT);
+        final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_GT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -401,9 +401,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateTimeNode eq = this.localDateTimeNode(DATETIME);
-        final SearchLocalDateTimeNode lt = this.localDateTimeNode(DATETIME_LT);
-        final SearchLocalDateTimeNode gt = this.localDateTimeNode(DATETIME_GT);
+        final LocalDateTimeSearchNode eq = this.localDateTimeNode(DATETIME);
+        final LocalDateTimeSearchNode lt = this.localDateTimeNode(DATETIME_LT);
+        final LocalDateTimeSearchNode gt = this.localDateTimeNode(DATETIME_GT);
 
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -416,9 +416,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateTimeNode eq = this.localDateTimeNode(DATETIME);
-        final SearchLocalDateTimeNode lt = this.localDateTimeNode(DATETIME_LT);
-        final SearchLocalDateTimeNode gt = this.localDateTimeNode(DATETIME_GT);
+        final LocalDateTimeSearchNode eq = this.localDateTimeNode(DATETIME);
+        final LocalDateTimeSearchNode lt = this.localDateTimeNode(DATETIME_LT);
+        final LocalDateTimeSearchNode gt = this.localDateTimeNode(DATETIME_GT);
 
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -431,17 +431,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalDateTimeNode eq = this.localDateTimeNode(DATETIME);
-        final SearchLocalDateTimeNode lt = this.localDateTimeNode(DATETIME_LT);
-        final SearchLocalDateTimeNode gt = this.localDateTimeNode(DATETIME_GT);
+        final LocalDateTimeSearchNode eq = this.localDateTimeNode(DATETIME);
+        final LocalDateTimeSearchNode lt = this.localDateTimeNode(DATETIME_LT);
+        final LocalDateTimeSearchNode gt = this.localDateTimeNode(DATETIME_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -451,7 +451,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalDateTimeLessNot() {
-        final SearchLocalDateTimeNode node = this.localDateTimeNode(DATETIME_LT);
+        final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_LT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -461,7 +461,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalTimeLess() {
-        final SearchLocalTimeNode node = this.localTimeNode(TIME_LT);
+        final LocalTimeSearchNode node = this.localTimeNode(TIME_LT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -469,7 +469,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalTimeEqual() {
-        final SearchLocalTimeNode node = this.localTimeNode(TIME);
+        final LocalTimeSearchNode node = this.localTimeNode(TIME);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -477,7 +477,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalTimeGreater() {
-        final SearchLocalTimeNode node = this.localTimeNode(TIME_GT);
+        final LocalTimeSearchNode node = this.localTimeNode(TIME_GT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -488,9 +488,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalTimeNode eq = this.localTimeNode(TIME);
-        final SearchLocalTimeNode lt = this.localTimeNode(TIME_LT);
-        final SearchLocalTimeNode gt = this.localTimeNode(TIME_GT);
+        final LocalTimeSearchNode eq = this.localTimeNode(TIME);
+        final LocalTimeSearchNode lt = this.localTimeNode(TIME_LT);
+        final LocalTimeSearchNode gt = this.localTimeNode(TIME_GT);
 
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -503,9 +503,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalTimeNode eq = this.localTimeNode(TIME);
-        final SearchLocalTimeNode lt = this.localTimeNode(TIME_LT);
-        final SearchLocalTimeNode gt = this.localTimeNode(TIME_GT);
+        final LocalTimeSearchNode eq = this.localTimeNode(TIME);
+        final LocalTimeSearchNode lt = this.localTimeNode(TIME_LT);
+        final LocalTimeSearchNode gt = this.localTimeNode(TIME_GT);
 
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -518,17 +518,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLocalTimeNode eq = this.localTimeNode(TIME);
-        final SearchLocalTimeNode lt = this.localTimeNode(TIME_LT);
-        final SearchLocalTimeNode gt = this.localTimeNode(TIME_GT);
+        final LocalTimeSearchNode eq = this.localTimeNode(TIME);
+        final LocalTimeSearchNode lt = this.localTimeNode(TIME_LT);
+        final LocalTimeSearchNode gt = this.localTimeNode(TIME_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLongNode longNode = this.longNode(VALUE);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LongSearchNode longNode = this.longNode(VALUE);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -538,7 +538,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLocalTimeLessNot() {
-        final SearchLocalTimeNode node = this.localTimeNode(TIME_LT);
+        final LocalTimeSearchNode node = this.localTimeNode(TIME_LT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -548,7 +548,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLongLess() {
-        final SearchLongNode node = this.longNode(VALUE_LT);
+        final LongSearchNode node = this.longNode(VALUE_LT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -556,7 +556,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLongEqual() {
-        final SearchLongNode node = this.longNode(VALUE);
+        final LongSearchNode node = this.longNode(VALUE);
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -564,7 +564,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLongGreater() {
-        final SearchLongNode node = this.longNode(VALUE_GT);
+        final LongSearchNode node = this.longNode(VALUE_GT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
 
         this.querySelectAndCheck(query, node, node);
@@ -575,9 +575,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLongNode eq = this.longNode(VALUE);
-        final SearchLongNode lt = this.longNode(VALUE_LT);
-        final SearchLongNode gt = this.longNode(VALUE_GT);
+        final LongSearchNode eq = this.longNode(VALUE);
+        final LongSearchNode lt = this.longNode(VALUE_LT);
+        final LongSearchNode gt = this.longNode(VALUE_GT);
 
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -590,9 +590,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLongNode eq = this.longNode(VALUE);
-        final SearchLongNode lt = this.longNode(VALUE_LT);
-        final SearchLongNode gt = this.longNode(VALUE_GT);
+        final LongSearchNode eq = this.longNode(VALUE);
+        final LongSearchNode lt = this.longNode(VALUE_LT);
+        final LongSearchNode gt = this.longNode(VALUE_GT);
 
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -605,17 +605,17 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchLongNode eq = this.longNode(VALUE);
-        final SearchLongNode lt = this.longNode(VALUE_LT);
-        final SearchLongNode gt = this.longNode(VALUE_GT);
+        final LongSearchNode eq = this.longNode(VALUE);
+        final LongSearchNode lt = this.longNode(VALUE_LT);
+        final LongSearchNode gt = this.longNode(VALUE_GT);
 
-        final SearchBigDecimalNode bigDecimalNode = this.bigDecimalNode(VALUE);
-        final SearchBigIntegerNode bigIntegerNode = this.bigIntegerNode(VALUE);
-        final SearchDoubleNode doubleNode = this.doubleNode(VALUE);
-        final SearchLocalDateNode dateNode = this.localDateNode(DATE);
-        final SearchLocalDateTimeNode dateTimeNode = this.localDateTimeNode(DATETIME);
-        final SearchLocalTimeNode timeNode = this.localTimeNode(TIME);
-        final SearchTextNode textNode = this.textNode(TEXT);
+        final BigDecimalSearchNode bigDecimalNode = this.bigDecimalNode(VALUE);
+        final BigIntegerSearchNode bigIntegerNode = this.bigIntegerNode(VALUE);
+        final DoubleSearchNode doubleNode = this.doubleNode(VALUE);
+        final LocalDateSearchNode dateNode = this.localDateNode(DATE);
+        final LocalDateTimeSearchNode dateTimeNode = this.localDateTimeNode(DATETIME);
+        final LocalTimeSearchNode timeNode = this.localTimeNode(TIME);
+        final TextSearchNode textNode = this.textNode(TEXT);
 
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals();
         this.querySelectAndCheck(query,
@@ -625,7 +625,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testLongLessNot() {
-        final SearchLongNode node = this.longNode(VALUE_LT);
+        final LongSearchNode node = this.longNode(VALUE_LT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThanEquals().not();
 
         this.querySelectAndCheck(query, node, node);
@@ -635,7 +635,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextLess() {
-        final SearchTextNode node = this.textNode(TEXT_LT);
+        final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE);
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -643,7 +643,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextEqual() {
-        final SearchTextNode node = this.textNode(TEXT);
+        final TextSearchNode node = this.textNode(TEXT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE);
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -651,7 +651,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextGreater() {
-        final SearchTextNode node = this.textNode(TEXT_GT);
+        final TextSearchNode node = this.textNode(TEXT_GT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE);
 
         this.querySelectAndCheck(query, node, node);
@@ -662,9 +662,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode eq = this.textNode(TEXT);
-        final SearchTextNode lt = this.textNode(TEXT_LT);
-        final SearchTextNode gt = this.textNode(TEXT_GT);
+        final TextSearchNode eq = this.textNode(TEXT);
+        final TextSearchNode lt = this.textNode(TEXT_LT);
+        final TextSearchNode gt = this.textNode(TEXT_GT);
 
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE);
         this.querySelectAndCheck(query,
@@ -677,9 +677,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode eq = this.textNode(TEXT);
-        final SearchTextNode lt = this.textNode(TEXT_LT);
-        final SearchTextNode gt = this.textNode(TEXT_GT);
+        final TextSearchNode eq = this.textNode(TEXT);
+        final TextSearchNode lt = this.textNode(TEXT_LT);
+        final TextSearchNode gt = this.textNode(TEXT_GT);
 
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE);
         this.querySelectAndCheck(query,
@@ -689,7 +689,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextLessNot() {
-        final SearchTextNode node = this.textNode(TEXT_LT);
+        final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThanEquals(CaseSensitivity.SENSITIVE).not();
 
         this.querySelectAndCheck(query, node, node);
@@ -699,7 +699,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextLessInsensitive() {
-        final SearchTextNode node = this.textNode(TEXT_LT);
+        final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThanEquals(CaseSensitivity.INSENSITIVE);
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -707,7 +707,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextEqualInsensitive() {
-        final SearchTextNode node = this.textNode(TEXT);
+        final TextSearchNode node = this.textNode(TEXT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThanEquals(CaseSensitivity.INSENSITIVE);
 
         this.querySelectAndCheck(query, node, node.selected());
@@ -715,7 +715,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
 
     @Test
     public final void testTextGreaterInsensitive() {
-        final SearchTextNode node = this.textNode(TEXT_GT);
+        final TextSearchNode node = this.textNode(TEXT_GT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThanEquals(CaseSensitivity.INSENSITIVE);
 
         this.querySelectAndCheck(query, node, node);
@@ -726,9 +726,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode eq = this.textNode(TEXT);
-        final SearchTextNode lt = this.textNode(TEXT_LT);
-        final SearchTextNode gt = this.textNode(TEXT_GT);
+        final TextSearchNode eq = this.textNode(TEXT);
+        final TextSearchNode lt = this.textNode(TEXT_LT);
+        final TextSearchNode gt = this.textNode(TEXT_GT);
 
         final SearchQuery query = this.textQueryValue(TEXT2).lessThanEquals(CaseSensitivity.INSENSITIVE);
         this.querySelectAndCheck(query,
@@ -741,9 +741,9 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode eq = this.textNode(TEXT2);
-        final SearchTextNode lt = this.textNode(TEXT2_LT);
-        final SearchTextNode gt = this.textNode(TEXT2_GT);
+        final TextSearchNode eq = this.textNode(TEXT2);
+        final TextSearchNode lt = this.textNode(TEXT2_LT);
+        final TextSearchNode gt = this.textNode(TEXT2_GT);
 
         final SearchQuery query = this.textQueryValue(TEXT2).lessThanEquals(CaseSensitivity.INSENSITIVE);
         this.querySelectAndCheck(query,
@@ -752,7 +752,7 @@ public final class SearchQueryLeafValueLessThanEqualsTest extends SearchQueryLea
     }
 
     @Override
-    SearchQueryLeafValueLessThanEquals createSearchQuery(final SearchTextQueryValue value, final SearchQueryTester tester) {
+    SearchQueryLeafValueLessThanEquals createSearchQuery(final TextSearchQueryValue value, final SearchQueryTester tester) {
         return SearchQueryLeafValueLessThanEquals.with(value, tester);
     }
 

@@ -40,19 +40,19 @@ public abstract class SearchQueryLeafValueTestCase<Q extends SearchQueryLeafValu
         return this.createSearchQuery(this.queryValue(), this.searchQueryTester());
     }
 
-    final SearchTextQueryValue queryValue() {
+    final TextSearchQueryValue queryValue() {
         return this.textQueryValue("value");
     }
 
     final SearchQueryTester searchQueryTester() {
-        return SearchTextQueryValueSearchQueryTester.with(this.queryValue().text(), CaseSensitivity.SENSITIVE, this.predicate());
+        return TextSearchQueryValueSearchQueryTester.with(this.queryValue().text(), CaseSensitivity.SENSITIVE, this.predicate());
     }
 
     final SearchQueryTester differentSearchQueryTester() {
-        return SearchTextQueryValueSearchQueryTester.with("different-text", CaseSensitivity.SENSITIVE, this.predicate());
+        return TextSearchQueryValueSearchQueryTester.with("different-text", CaseSensitivity.SENSITIVE, this.predicate());
     }
 
     abstract SearchQueryValueSearchQueryTesterComparisonPredicate predicate();
 
-    abstract Q createSearchQuery(final SearchTextQueryValue value, final SearchQueryTester tester);
+    abstract Q createSearchQuery(final TextSearchQueryValue value, final SearchQueryTester tester);
 }
