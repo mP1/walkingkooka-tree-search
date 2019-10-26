@@ -86,7 +86,6 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
 
     @Override
     public void testReplaceChild() {
-        throw new UnsupportedOperationException();
     }
 
     @Test
@@ -96,7 +95,6 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
 
     @Override
     public void testAppendChild2() {
-        throw new UnsupportedOperationException();
     }
 
     @Test
@@ -106,12 +104,10 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
 
     @Override
     public void testRemoveChildLast() {
-        throw new UnsupportedOperationException();
     }
 
     @Override
     public void testParentWithoutChild() {
-        throw new UnsupportedOperationException();
     }
 
     @Test

@@ -99,7 +99,6 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
 
     @Override
     public void testNotTwiceGivesOriginalQuery() {
-        throw new UnsupportedOperationException();
     }
 
     @Override
