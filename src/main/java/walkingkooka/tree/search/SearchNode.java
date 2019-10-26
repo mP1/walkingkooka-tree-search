@@ -54,87 +54,87 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     public final static List<SearchNode> NO_CHILDREN = Lists.empty();
 
     /**
-     * {@see SearchBigDecimalNode}
+     * {@see BigDecimalSearchNode}
      */
-    public static SearchBigDecimalNode bigDecimal(final String text, final BigDecimal value) {
-        return SearchBigDecimalNode.with(text, value);
+    public static BigDecimalSearchNode bigDecimal(final String text, final BigDecimal value) {
+        return BigDecimalSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchBigIntegerNode}
+     * {@see BigIntegerSearchNode}
      */
-    public static SearchBigIntegerNode bigInteger(final String text, final BigInteger value) {
-        return SearchBigIntegerNode.with(text, value);
+    public static BigIntegerSearchNode bigInteger(final String text, final BigInteger value) {
+        return BigIntegerSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchDoubleNode}
+     * {@see DoubleSearchNode}
      */
-    public static SearchDoubleNode doubleNode(final String text, final double value) {
-        return SearchDoubleNode.with(text, value);
+    public static DoubleSearchNode doubleSearchNode(final String text, final double value) {
+        return DoubleSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchIgnoredNode}
+     * {@see IgnoredSearchNode}
      */
-    public static SearchIgnoredNode ignored(final SearchNode child) {
-        return SearchIgnoredNode.with(child);
+    public static IgnoredSearchNode ignored(final SearchNode child) {
+        return IgnoredSearchNode.with(child);
     }
 
     /**
-     * {@see SearchLocalDateNode}
+     * {@see LocalDateSearchNode}
      */
-    public static SearchLocalDateNode localDate(final String text, final LocalDate value) {
-        return SearchLocalDateNode.with(text, value);
+    public static LocalDateSearchNode localDate(final String text, final LocalDate value) {
+        return LocalDateSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchLocalDateTimeNode}
+     * {@see LocalDateTimeSearchNode}
      */
-    public static SearchLocalDateTimeNode localDateTime(final String text, final LocalDateTime value) {
-        return SearchLocalDateTimeNode.with(text, value);
+    public static LocalDateTimeSearchNode localDateTime(final String text, final LocalDateTime value) {
+        return LocalDateTimeSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchLocalTimeNode}
+     * {@see LocalTimeSearchNode}
      */
-    public static SearchLocalTimeNode localTime(final String text, final LocalTime value) {
-        return SearchLocalTimeNode.with(text, value);
+    public static LocalTimeSearchNode localTime(final String text, final LocalTime value) {
+        return LocalTimeSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchLongNode}
+     * {@see LongSearchNode}
      */
-    public static SearchLongNode longNode(final String text, final long value) {
-        return SearchLongNode.with(text, value);
+    public static LongSearchNode longSearchNode(final String text, final long value) {
+        return LongSearchNode.with(text, value);
     }
 
     /**
-     * {@see SearchMetaNode}
+     * {@see MetaSearchNode}
      */
-    public static SearchMetaNode meta(final SearchNode child, final Map<SearchNodeAttributeName, String> attributes) {
-        return SearchMetaNode.with(child, attributes);
+    public static MetaSearchNode meta(final SearchNode child, final Map<SearchNodeAttributeName, String> attributes) {
+        return MetaSearchNode.with(child, attributes);
     }
 
     /**
-     * {@see SearchSelectNode}
+     * {@see SelectSearchNode}
      */
-    public static SearchSelectNode select(final SearchNode child) {
-        return SearchSelectNode.with(child);
+    public static SelectSearchNode select(final SearchNode child) {
+        return SelectSearchNode.with(child);
     }
 
     /**
-     * {@see SearchSequenceNode}
+     * {@see SequenceSearchNode}
      */
-    public static SearchSequenceNode sequence(final List<SearchNode> children) {
-        return SearchSequenceNode.with(children);
+    public static SequenceSearchNode sequence(final List<SearchNode> children) {
+        return SequenceSearchNode.with(children);
     }
 
     /**
-     * {@see SearchTextNode}
+     * {@see TextSearchNode}
      */
-    public static SearchTextNode text(final String text, final String value) {
-        return SearchTextNode.with(text, value);
+    public static TextSearchNode text(final String text, final String value) {
+        return TextSearchNode.with(text, value);
     }
 
     /**
@@ -256,7 +256,7 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     // attributes.......................................................................................................
 
     /**
-     * Would be setter that potentially wraps this node in a {@link SearchMetaNode}.
+     * Would be setter that potentially wraps this node in a {@link MetaSearchNode}.
      */
     @Override
     public final SearchNode setAttributes(final Map<SearchNodeAttributeName, String> attributes) {
@@ -267,9 +267,9 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     }
 
     /**
-     * Most classes except for {@link SearchMetaNode} create a new {@link SearchMetaNode}.
+     * Most classes except for {@link MetaSearchNode} create a new {@link MetaSearchNode}.
      */
-    abstract SearchMetaNode setAttributes0(final Map<SearchNodeAttributeName, String> attributes);
+    abstract MetaSearchNode setAttributes0(final Map<SearchNodeAttributeName, String> attributes);
 
     // replace ...............................................................................................
 
@@ -336,89 +336,89 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     }
 
     /**
-     * Only {@link SearchBigDecimalNode} returns true.
+     * Only {@link BigDecimalSearchNode} returns true.
      */
     public final boolean isBigDecimal() {
-        return this instanceof SearchBigDecimalNode;
+        return this instanceof BigDecimalSearchNode;
     }
 
     /**
-     * Only {@link SearchBigIntegerNode} returns true.
+     * Only {@link BigIntegerSearchNode} returns true.
      */
     public final boolean isBigInteger() {
-        return this instanceof SearchBigIntegerNode;
+        return this instanceof BigIntegerSearchNode;
     }
 
     /**
-     * Only {@link SearchDoubleNode} returns true.
+     * Only {@link DoubleSearchNode} returns true.
      */
     public final boolean isDouble() {
-        return this instanceof SearchDoubleNode;
+        return this instanceof DoubleSearchNode;
     }
 
     /**
-     * Only {@link SearchIgnoredNode} returns true.
+     * Only {@link IgnoredSearchNode} returns true.
      */
     @SuppressWarnings("WeakerAccess")
     public final boolean isIgnored() {
-        return this instanceof SearchIgnoredNode;
+        return this instanceof IgnoredSearchNode;
     }
 
     /**
-     * Only {@link SearchLocalDateNode} returns true.
+     * Only {@link LocalDateSearchNode} returns true.
      */
     public final boolean isLocalDate() {
-        return this instanceof SearchLocalDateNode;
+        return this instanceof LocalDateSearchNode;
     }
 
     /**
-     * Only {@link SearchLocalDateTimeNode} returns true.
+     * Only {@link LocalDateTimeSearchNode} returns true.
      */
     public final boolean isLocalDateTime() {
-        return this instanceof SearchLocalDateTimeNode;
+        return this instanceof LocalDateTimeSearchNode;
     }
 
     /**
-     * Only {@link SearchLocalTimeNode} returns true.
+     * Only {@link LocalTimeSearchNode} returns true.
      */
     public final boolean isLocalTime() {
-        return this instanceof SearchLocalTimeNode;
+        return this instanceof LocalTimeSearchNode;
     }
 
     /**
-     * Only {@link SearchLongNode} returns true.
+     * Only {@link LongSearchNode} returns true.
      */
     public final boolean isLong() {
-        return this instanceof SearchLongNode;
+        return this instanceof LongSearchNode;
     }
 
     /**
-     * Only {@link SearchMetaNode} returns true.
+     * Only {@link MetaSearchNode} returns true.
      */
     public final boolean isMeta() {
-        return this instanceof SearchMetaNode;
+        return this instanceof MetaSearchNode;
     }
 
     /**
-     * Only {@link SearchSequenceNode} returns true.
+     * Only {@link SequenceSearchNode} returns true.
      */
     public final boolean isSequence() {
-        return this instanceof SearchSequenceNode;
+        return this instanceof SequenceSearchNode;
     }
 
     /**
-     * Only {@link SearchSelectNode} returns true.
+     * Only {@link SelectSearchNode} returns true.
      */
     @SuppressWarnings("WeakerAccess")
     public final boolean isSelect() {
-        return this instanceof SearchSelectNode;
+        return this instanceof SelectSearchNode;
     }
 
     /**
-     * Only {@link SearchTextNode} returns true.
+     * Only {@link TextSearchNode} returns true.
      */
     public final boolean isText() {
-        return this instanceof SearchTextNode;
+        return this instanceof TextSearchNode;
     }
 
     /**
@@ -435,28 +435,28 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     // SearchQuery ...............................................................................................
 
     /**
-     * A factory used during selecting that wraps this {@link SearchNode} in a {@link SearchIgnoredNode}.
+     * A factory used during selecting that wraps this {@link SearchNode} in a {@link IgnoredSearchNode}.
      */
-    abstract public SearchIgnoredNode ignored();
+    abstract public IgnoredSearchNode ignored();
 
     abstract void select(final SearchQuery query, final SearchQueryContext context);
 
     /**
-     * A factory used during selecting that wraps this {@link SearchNode} in a {@link SearchSelectNode}.
+     * A factory used during selecting that wraps this {@link SearchNode} in a {@link SelectSearchNode}.
      */
-    abstract public SearchSelectNode selected();
+    abstract public SelectSearchNode selected();
 
     /**
-     * Used to visit and potentially replace zero or more of the {@link SearchSelectNode} given to the function.
+     * Used to visit and potentially replace zero or more of the {@link SelectSearchNode} given to the function.
      * The function can return the initial token to indicate no replacement or replace with anything it wishes.
      */
-    final public SearchNode replaceSelected(final Function<SearchSelectNode, SearchNode> replacer) {
+    final public SearchNode replaceSelected(final Function<SelectSearchNode, SearchNode> replacer) {
         Objects.requireNonNull(replacer, "replacer");
 
         return this.replaceSelected0(replacer);
     }
 
-    abstract SearchNode replaceSelected0(final Function<SearchSelectNode, SearchNode> replacer);
+    abstract SearchNode replaceSelected0(final Function<SelectSearchNode, SearchNode> replacer);
 
     // Visitor .......................................................................................................
 

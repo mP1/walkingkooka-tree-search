@@ -105,7 +105,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("Q1Q");
+        final TextSearchNode text = this.textNode("Q1Q");
         final SearchNode selected = this.textNode("Q")
                 .selected();
 
@@ -122,7 +122,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("Q-Q+QQ");
+        final TextSearchNode text = this.textNode("Q-Q+QQ");
         final SearchNode selected = this.textNode("Q")
                 .selected();
 
@@ -139,7 +139,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("123");
+        final TextSearchNode text = this.textNode("123");
         final SearchNode selected = text.selected();
 
         final SearchQuery query = this.textQueryValue("123").
@@ -158,7 +158,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("123");
+        final TextSearchNode text = this.textNode("123");
 
         final SearchQuery query = this.textQueryValue("2").
                 contains(SENSITIVITY)
@@ -176,7 +176,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("123");
+        final TextSearchNode text = this.textNode("123");
 
         final SearchQuery query = this.textQueryValue("2").
                 contains(SENSITIVITY)
@@ -194,7 +194,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("12345");
+        final TextSearchNode text = this.textNode("12345");
 
         final SearchQuery query = this.textQueryValue("234").
                 contains(SENSITIVITY)
@@ -212,7 +212,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("12345");
+        final TextSearchNode text = this.textNode("12345");
 
         final SearchQuery query = this.textQueryValue("234").
                 contains(SENSITIVITY)
@@ -244,7 +244,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("q1Q");
+        final TextSearchNode text = this.textNode("q1Q");
 
         final SearchQuery query = this.textQueryValue("Q").contains(CaseSensitivity.INSENSITIVE);
         this.querySelectAndCheck(query,
@@ -259,7 +259,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
-        final SearchTextNode text = this.textNode("Q-q+qq");
+        final TextSearchNode text = this.textNode("Q-q+qq");
         final SearchNode selected = this.textNode("q")
                 .selected();
 
@@ -313,7 +313,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
         return SearchQueryLeafValueContains.with(this.queryTextValue(), this.caseSensitivity());
     }
 
-    private SearchTextQueryValue queryTextValue() {
+    private TextSearchQueryValue queryTextValue() {
         return this.textQueryValue("query");
     }
 

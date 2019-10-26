@@ -152,117 +152,117 @@ public abstract class SearchQueryTestCase<Q extends SearchQuery> implements Clas
         return this.textNode("z");
     }
 
-    final SearchBigDecimalNode bigDecimalNode(final double value) {
+    final BigDecimalSearchNode bigDecimalNode(final double value) {
         return this.bigDecimalNode(this.bigDecimal(value));
     }
 
-    final SearchBigDecimalNode bigDecimalNode(final BigDecimal value) {
+    final BigDecimalSearchNode bigDecimalNode(final BigDecimal value) {
         return SearchNode.bigDecimal(value.toString(), value);
     }
 
-    final SearchBigIntegerNode bigIntegerNode(final long value) {
+    final BigIntegerSearchNode bigIntegerNode(final long value) {
         return this.bigIntegerNode(this.bigInteger(value));
     }
 
-    final SearchBigIntegerNode bigIntegerNode(final BigInteger value) {
+    final BigIntegerSearchNode bigIntegerNode(final BigInteger value) {
         return SearchNode.bigInteger(value.toString(), value);
     }
 
-    final SearchDoubleNode doubleNode(final double value) {
-        return SearchNode.doubleNode(String.valueOf(value), value);
+    final DoubleSearchNode doubleNode(final double value) {
+        return SearchNode.doubleSearchNode(String.valueOf(value), value);
     }
 
-    final SearchLocalDateNode localDateNode(final String value) {
+    final LocalDateSearchNode localDateNode(final String value) {
         return this.localDateNode(this.localDate(value));
     }
 
-    final SearchLocalDateNode localDateNode(final LocalDate value) {
+    final LocalDateSearchNode localDateNode(final LocalDate value) {
         return SearchNode.localDate(DateTimeFormatter.ISO_LOCAL_DATE.format(value), value);
     }
 
-    final SearchLocalDateTimeNode localDateTimeNode(final String value) {
+    final LocalDateTimeSearchNode localDateTimeNode(final String value) {
         return this.localDateTimeNode(this.localDateTime(value));
     }
 
-    final SearchLocalDateTimeNode localDateTimeNode(final LocalDateTime value) {
+    final LocalDateTimeSearchNode localDateTimeNode(final LocalDateTime value) {
         return SearchNode.localDateTime(DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(value), value);
     }
 
-    final SearchLocalTimeNode localTimeNode(final String value) {
+    final LocalTimeSearchNode localTimeNode(final String value) {
         return this.localTimeNode(this.localTime(value));
     }
 
-    final SearchLocalTimeNode localTimeNode(final LocalTime value) {
+    final LocalTimeSearchNode localTimeNode(final LocalTime value) {
         return SearchNode.localTime(DateTimeFormatter.ISO_LOCAL_TIME.format(value), value);
     }
 
-    final SearchLongNode longNode(final long value) {
-        return SearchNode.longNode(String.valueOf(value), value);
+    final LongSearchNode longNode(final long value) {
+        return SearchNode.longSearchNode(String.valueOf(value), value);
     }
 
-    final SearchTextNode textNode(final String value) {
+    final TextSearchNode textNode(final String value) {
         return SearchNode.text(value, value);
     }
 
-    final SearchSelectNode selectNode(final SearchNode child) {
+    final SelectSearchNode selectNode(final SearchNode child) {
         return SearchNode.select(child);
     }
 
-    final SearchSequenceNode sequenceNode(final SearchNode... children) {
+    final SequenceSearchNode sequenceNode(final SearchNode... children) {
         return SearchNode.sequence(Lists.of(children));
     }
 
     // QueryValue...............................................................................
 
-    final SearchBigDecimalQueryValue bigDecimalQueryValue(final double value) {
+    final BigDecimalSearchQueryValue bigDecimalQueryValue(final double value) {
         return this.bigDecimalQueryValue(this.bigDecimal(value));
     }
 
-    final SearchBigDecimalQueryValue bigDecimalQueryValue(final BigDecimal value) {
+    final BigDecimalSearchQueryValue bigDecimalQueryValue(final BigDecimal value) {
         return SearchQueryValue.bigDecimal(value);
     }
 
-    final SearchBigIntegerQueryValue bigIntegerQueryValue(final long value) {
+    final BigIntegerSearchQueryValue bigIntegerQueryValue(final long value) {
         return this.bigIntegerQueryValue(this.bigInteger(value));
     }
 
-    final SearchBigIntegerQueryValue bigIntegerQueryValue(final BigInteger value) {
+    final BigIntegerSearchQueryValue bigIntegerQueryValue(final BigInteger value) {
         return SearchQueryValue.bigInteger(value);
     }
 
-    final SearchDoubleQueryValue doubleQueryValue(final double value) {
+    final DoubleSearchQueryValue doubleQueryValue(final double value) {
         return SearchQueryValue.doubleValue(value);
     }
 
-    final SearchLocalDateQueryValue localDateQueryValue(final String value) {
+    final LocalDateSearchQueryValue localDateQueryValue(final String value) {
         return this.localDateQueryValue(this.localDate(value));
     }
 
-    final SearchLocalDateQueryValue localDateQueryValue(final LocalDate value) {
+    final LocalDateSearchQueryValue localDateQueryValue(final LocalDate value) {
         return SearchQueryValue.localDate(value);
     }
 
-    final SearchLocalDateTimeQueryValue localDateTimeQueryValue(final String value) {
+    final LocalDateTimeSearchQueryValue localDateTimeQueryValue(final String value) {
         return this.localDateTimeQueryValue(this.localDateTime(value));
     }
 
-    final SearchLocalDateTimeQueryValue localDateTimeQueryValue(final LocalDateTime value) {
+    final LocalDateTimeSearchQueryValue localDateTimeQueryValue(final LocalDateTime value) {
         return SearchQueryValue.localDateTime(value);
     }
 
-    final SearchLocalTimeQueryValue localTimeQueryValue(final String value) {
+    final LocalTimeSearchQueryValue localTimeQueryValue(final String value) {
         return this.localTimeQueryValue(this.localTime(value));
     }
 
-    final SearchLocalTimeQueryValue localTimeQueryValue(final LocalTime value) {
+    final LocalTimeSearchQueryValue localTimeQueryValue(final LocalTime value) {
         return SearchQueryValue.localTime(value);
     }
 
-    final SearchLongQueryValue longQueryValue(final long value) {
+    final LongSearchQueryValue longQueryValue(final long value) {
         return SearchQueryValue.longValue(value);
     }
 
-    final SearchTextQueryValue textQueryValue(final String value) {
+    final TextSearchQueryValue textQueryValue(final String value) {
         return SearchQueryValue.text(value);
     }
 

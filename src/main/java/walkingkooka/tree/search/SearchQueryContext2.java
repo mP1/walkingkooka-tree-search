@@ -78,7 +78,7 @@ final class SearchQueryContext2 extends SearchQueryContext {
         }
     }
 
-    private void replaceSequence(final SearchNode match, final SearchSequenceNode parent, final SearchNode replacement) {
+    private void replaceSequence(final SearchNode match, final SequenceSearchNode parent, final SearchNode replacement) {
         final List<SearchNode> all = Lists.array();
         all.addAll(parent.children());
         all.set(match.index(), replacement);
@@ -100,7 +100,7 @@ final class SearchQueryContext2 extends SearchQueryContext {
     }
 
     /**
-     * A {@link SearchNode} (probably a {@link SearchSequenceNode} that holds each match wrapped inside a {@link SearchSelectNode}.
+     * A {@link SearchNode} (probably a {@link SequenceSearchNode} that holds each match wrapped inside a {@link SelectSearchNode}.
      */
     private SearchNode result;
 

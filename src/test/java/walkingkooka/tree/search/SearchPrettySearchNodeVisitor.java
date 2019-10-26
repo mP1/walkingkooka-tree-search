@@ -48,90 +48,90 @@ final class SearchPrettySearchNodeVisitor extends SearchNodeVisitor {
     }
 
     @Override
-    protected Visiting startVisit(final SearchIgnoredNode node) {
+    protected Visiting startVisit(final IgnoredSearchNode node) {
         this.printer.enter(node);
         return super.startVisit(node);
     }
 
     @Override
-    protected void endVisit(final SearchIgnoredNode node) {
+    protected void endVisit(final IgnoredSearchNode node) {
         this.printer.exit(node);
         super.endVisit(node);
     }
 
     @Override
-    protected Visiting startVisit(final SearchMetaNode node) {
+    protected Visiting startVisit(final MetaSearchNode node) {
         this.printer.enter(node);
         return super.startVisit(node);
     }
 
     @Override
-    protected void endVisit(final SearchMetaNode node) {
+    protected void endVisit(final MetaSearchNode node) {
         this.printer.exit(node);
         super.endVisit(node);
     }
 
     @Override
-    protected Visiting startVisit(final SearchSelectNode node) {
+    protected Visiting startVisit(final SelectSearchNode node) {
         this.printer.enter(node);
         return super.startVisit(node);
     }
 
     @Override
-    protected void endVisit(final SearchSelectNode node) {
+    protected void endVisit(final SelectSearchNode node) {
         this.printer.exit(node);
         super.endVisit(node);
     }
 
     @Override
-    protected Visiting startVisit(final SearchSequenceNode node) {
+    protected Visiting startVisit(final SequenceSearchNode node) {
         this.printer.enter(node);
         return super.startVisit(node);
     }
 
     @Override
-    protected void endVisit(final SearchSequenceNode node) {
+    protected void endVisit(final SequenceSearchNode node) {
         this.printer.exit(node);
         super.endVisit(node);
     }
 
     @Override
-    protected void visit(final SearchBigDecimalNode node) {
+    protected void visit(final BigDecimalSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchBigIntegerNode node) {
+    protected void visit(final BigIntegerSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchDoubleNode node) {
+    protected void visit(final DoubleSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchLocalDateNode node) {
+    protected void visit(final LocalDateSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchLocalDateTimeNode node) {
+    protected void visit(final LocalDateTimeSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchLocalTimeNode node) {
+    protected void visit(final LocalTimeSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchLongNode node) {
+    protected void visit(final LongSearchNode node) {
         this.printer.leaf(node);
     }
 
     @Override
-    protected void visit(final SearchTextNode node) {
+    protected void visit(final TextSearchNode node) {
         this.printer.leaf(node);
     }
 

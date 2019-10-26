@@ -38,9 +38,9 @@ public abstract class SearchQueryLeafAttributeTestCase<Q extends SearchQueryLeaf
         return this.createSearchQuery(this.queryValue(), this.attributeName(), CaseSensitivity.SENSITIVE);
     }
 
-    abstract Q createSearchQuery(final SearchTextQueryValue queryValue, final SearchNodeAttributeName attributeName, final CaseSensitivity sensitivity);
+    abstract Q createSearchQuery(final TextSearchQueryValue queryValue, final SearchNodeAttributeName attributeName, final CaseSensitivity sensitivity);
 
-    final SearchTextQueryValue queryValue() {
+    final TextSearchQueryValue queryValue() {
         return this.textQueryValue(this.text());
     }
 

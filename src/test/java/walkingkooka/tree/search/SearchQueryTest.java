@@ -88,7 +88,7 @@ public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
         this.replaceSelectedAndCheck(test, this.queryAndReplace("abc", caseSensitivity, "XYZ"));
     }
 
-    private Function<SearchSequenceNode, SearchNode> queryAndReplace(final String searchFor,
+    private Function<SequenceSearchNode, SearchNode> queryAndReplace(final String searchFor,
                                                                      final CaseSensitivity caseSensitivity,
                                                                      final String replaceWith) {
         return (sequenceNode -> {
@@ -102,7 +102,7 @@ public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
     }
 
     private void replaceSelectedAndCheck(final String test,
-                                         final Function<SearchSequenceNode, SearchNode> queryAndReplace) throws IOException {
+                                         final Function<SequenceSearchNode, SearchNode> queryAndReplace) throws IOException {
         final String input = this.resourceAsText(test + ".input.txt");
 
         // boring tokenize on space...
@@ -118,7 +118,7 @@ public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
         final Optional<ParserToken> tokens = parser.parse(TextCursors.charSequence(input), new FakeParserContext());
 
         // convert into SearchTextNodes
-        final SearchSequenceNode nodes = SearchNode.sequence(tokens.get()
+        final SequenceSearchNode nodes = SearchNode.sequence(tokens.get()
                 .cast(RepeatedParserToken.class)
                 .flat()
                 .value()

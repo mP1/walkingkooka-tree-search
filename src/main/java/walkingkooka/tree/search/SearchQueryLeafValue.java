@@ -32,7 +32,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchBigDecimalNode node, final SearchQueryContext context) {
+    final void visit(final BigDecimalSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -41,7 +41,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchBigIntegerNode node, final SearchQueryContext context) {
+    final void visit(final BigIntegerSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -50,7 +50,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchDoubleNode node, final SearchQueryContext context) {
+    final void visit(final DoubleSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -59,7 +59,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchLocalDateNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -68,7 +68,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchLocalDateTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -77,7 +77,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchLocalTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalTimeSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -86,7 +86,7 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchLongNode node, final SearchQueryContext context) {
+    final void visit(final LongSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {
@@ -95,12 +95,12 @@ abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
     }
 
     @Override
-    final void visit(final SearchMetaNode node, final SearchQueryContext context) {
+    final void visit(final MetaSearchNode node, final SearchQueryContext context) {
         context.failure(node);
     }
 
     @Override
-    final void visit(final SearchTextNode node, final SearchQueryContext context) {
+    final void visit(final TextSearchNode node, final SearchQueryContext context) {
         if(this.tester.test(node)) {
             context.success(node);
         } else {

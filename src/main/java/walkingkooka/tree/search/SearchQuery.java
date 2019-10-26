@@ -35,32 +35,32 @@ public abstract class SearchQuery {
     /**
      * {@see SearchQueryLeafAttributeValueContains}
      */
-    static SearchQueryLeafAttributeValueContains attributeValueContains(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueContains attributeValueContains(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         return SearchQueryLeafAttributeValueContains.with(value, attributeName, caseSensitivity);
     }
 
     /**
      * {@see SearchQueryLeafAttributeValueDoesntContains}
      */
-    static SearchQueryLeafAttributeValueDoesntContains attributeValueDoesntContains(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueDoesntContains attributeValueDoesntContains(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         return SearchQueryLeafAttributeValueDoesntContains.with(value, attributeName, caseSensitivity);
     }
 
     /**
      * {@see SearchQueryLeafAttributeValueEquals}
      */
-    static SearchQueryLeafAttributeValueEquals attributeValueEquals(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueEquals attributeValueEquals(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         return SearchQueryLeafAttributeValueEquals.with(value, attributeName, caseSensitivity);
     }
 
     /**
      * {@see SearchQueryLeafAttributeValueNotEquals}
      */
-    static SearchQueryLeafAttributeValueNotEquals attributeValueNotEquals(final SearchTextQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafAttributeValueNotEquals attributeValueNotEquals(final TextSearchQueryValue value, final SearchNodeAttributeName attributeName, final CaseSensitivity caseSensitivity) {
         return SearchQueryLeafAttributeValueNotEquals.with(value, attributeName, caseSensitivity);
     }
 
-    static SearchQueryLeafValueContains contains(final SearchTextQueryValue value, final CaseSensitivity caseSensitivity) {
+    static SearchQueryLeafValueContains contains(final TextSearchQueryValue value, final CaseSensitivity caseSensitivity) {
         return SearchQueryLeafValueContains.with(value, caseSensitivity);
     }
 
@@ -115,7 +115,7 @@ public abstract class SearchQuery {
     public abstract SearchQuery not();
 
     /**
-     * Searches the nodes starting at {@link SearchNode} using this query returning a new nodes with {@link SearchSelectNode} to select matches.
+     * Searches the nodes starting at {@link SearchNode} using this query returning a new nodes with {@link SelectSearchNode} to select matches.
      */
     public final SearchNode select(final SearchNode node) {
         Objects.requireNonNull(node, "node");
@@ -125,23 +125,23 @@ public abstract class SearchQuery {
         return context.finish();
     }
 
-    abstract void visit(final SearchBigDecimalNode node, final SearchQueryContext context);
+    abstract void visit(final BigDecimalSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchBigIntegerNode node, final SearchQueryContext context);
+    abstract void visit(final BigIntegerSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchDoubleNode node, final SearchQueryContext context);
+    abstract void visit(final DoubleSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchLocalDateNode node, final SearchQueryContext context);
+    abstract void visit(final LocalDateSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchLocalDateTimeNode node, final SearchQueryContext context);
+    abstract void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchLocalTimeNode node, final SearchQueryContext context);
+    abstract void visit(final LocalTimeSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchLongNode node, final SearchQueryContext context);
+    abstract void visit(final LongSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchMetaNode node, final SearchQueryContext context);
+    abstract void visit(final MetaSearchNode node, final SearchQueryContext context);
 
-    abstract void visit(final SearchTextNode node, final SearchQueryContext context);
+    abstract void visit(final TextSearchNode node, final SearchQueryContext context);
 
     @Override
     abstract public int hashCode();

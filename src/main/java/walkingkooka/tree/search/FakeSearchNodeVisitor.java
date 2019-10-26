@@ -36,82 +36,82 @@ public class FakeSearchNodeVisitor extends SearchNodeVisitor implements Fake {
     }
 
     @Override
-    protected Visiting startVisit(final SearchIgnoredNode node) {
+    protected Visiting startVisit(final IgnoredSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void endVisit(final SearchIgnoredNode node) {
+    protected void endVisit(final IgnoredSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected Visiting startVisit(final SearchMetaNode node) {
+    protected Visiting startVisit(final MetaSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void endVisit(final SearchMetaNode node) {
+    protected void endVisit(final MetaSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected Visiting startVisit(final SearchSelectNode node) {
+    protected Visiting startVisit(final SelectSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void endVisit(final SearchSelectNode node) {
+    protected void endVisit(final SelectSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected Visiting startVisit(final SearchSequenceNode node) {
+    protected Visiting startVisit(final SequenceSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void endVisit(final SearchSequenceNode node) {
+    protected void endVisit(final SequenceSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchBigDecimalNode node) {
+    protected void visit(final BigDecimalSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchBigIntegerNode node) {
+    protected void visit(final BigIntegerSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchDoubleNode node) {
+    protected void visit(final DoubleSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchLocalDateNode node) {
+    protected void visit(final LocalDateSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchLocalDateTimeNode node) {
+    protected void visit(final LocalDateTimeSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchLocalTimeNode node) {
+    protected void visit(final LocalTimeSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchLongNode node) {
+    protected void visit(final LongSearchNode node) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    protected void visit(final SearchTextNode node) {
+    protected void visit(final TextSearchNode node) {
         throw new UnsupportedOperationException();
     }
 }

@@ -32,59 +32,59 @@ import java.util.Objects;
 public abstract class SearchQueryValue {
 
     /**
-     * {@see SearchBigDecimalQueryValue}
+     * {@see BigDecimalSearchQueryValue}
      */
-    public static SearchBigDecimalQueryValue bigDecimal(final BigDecimal value) {
-        return SearchBigDecimalQueryValue.with(value);
+    public static BigDecimalSearchQueryValue bigDecimal(final BigDecimal value) {
+        return BigDecimalSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchBigIntegerQueryValue}
+     * {@see BigIntegerSearchQueryValue}
      */
-    public static SearchBigIntegerQueryValue bigInteger(final BigInteger value) {
-        return SearchBigIntegerQueryValue.with(value);
+    public static BigIntegerSearchQueryValue bigInteger(final BigInteger value) {
+        return BigIntegerSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchDoubleQueryValue}
+     * {@see DoubleSearchQueryValue}
      */
-    public static SearchDoubleQueryValue doubleValue(final double value) {
-        return SearchDoubleQueryValue.with(value);
+    public static DoubleSearchQueryValue doubleValue(final double value) {
+        return DoubleSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchLocalDateQueryValue}
+     * {@see LocalDateSearchQueryValue}
      */
-    public static SearchLocalDateQueryValue localDate(final LocalDate value) {
-        return SearchLocalDateQueryValue.with(value);
+    public static LocalDateSearchQueryValue localDate(final LocalDate value) {
+        return LocalDateSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchLocalDateTimeQueryValue}
+     * {@see LocalDateTimeSearchQueryValue}
      */
-    public static SearchLocalDateTimeQueryValue localDateTime(final LocalDateTime value) {
-        return SearchLocalDateTimeQueryValue.with(value);
+    public static LocalDateTimeSearchQueryValue localDateTime(final LocalDateTime value) {
+        return LocalDateTimeSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchLocalTimeQueryValue}
+     * {@see LocalTimeSearchQueryValue}
      */
-    public static SearchLocalTimeQueryValue localTime(final LocalTime value) {
-        return SearchLocalTimeQueryValue.with(value);
+    public static LocalTimeSearchQueryValue localTime(final LocalTime value) {
+        return LocalTimeSearchQueryValue.with(value);
     }
 
     /**
-     * {@see SearchLongQueryValue}
+     * {@see LongSearchQueryValue}
      */
-    public static SearchLongQueryValue longValue(final long value) {
-        return SearchLongQueryValue.with(value);
+    public static LongSearchQueryValue longValue(final long value) {
+        return LongSearchQueryValue.with(value);
     }
 
     /**
      * {@see SearchStringQueryValue}
      */
-    public static SearchTextQueryValue text(final String value) {
-        return SearchTextQueryValue.with(value);
+    public static TextSearchQueryValue text(final String value) {
+        return TextSearchQueryValue.with(value);
     }
 
     /**
@@ -101,7 +101,7 @@ public abstract class SearchQueryValue {
     }
 
     /**
-     * This method is only implemented by {@link SearchTextQueryValue}
+     * This method is only implemented by {@link TextSearchQueryValue}
      */
     abstract String text();
 

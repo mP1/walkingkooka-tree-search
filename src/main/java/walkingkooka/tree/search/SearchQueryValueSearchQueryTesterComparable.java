@@ -29,17 +29,17 @@ abstract class SearchQueryValueSearchQueryTesterComparable<T extends Comparable<
     final SearchQueryValueSearchQueryTesterComparisonPredicate predicate;
 
     @Override
-    final boolean test(final SearchLocalDateNode node) {
+    final boolean test(final LocalDateSearchNode node) {
         return false;
     }
 
     @Override
-    final boolean test(final SearchLocalDateTimeNode node) {
+    final boolean test(final LocalDateTimeSearchNode node) {
         return false;
     }
 
     @Override
-    final boolean test(final SearchLocalTimeNode node) {
+    final boolean test(final LocalTimeSearchNode node) {
         return false;
     }
 

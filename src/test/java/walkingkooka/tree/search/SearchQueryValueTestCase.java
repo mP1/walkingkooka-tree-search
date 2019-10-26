@@ -66,11 +66,11 @@ public abstract class SearchQueryValueTestCase<Q extends SearchQueryValue, V> im
 
     @Override
     public String typeNamePrefix() {
-        return "Search";
+        return "";
     }
 
     @Override
     public final String typeNameSuffix() {
-        return this.subtractTypeNamePrefix();
+        return SearchQueryValue.class.getSimpleName();
     }
 }

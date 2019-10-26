@@ -25,9 +25,9 @@ import java.util.Objects;
 /**
  * Base class for all leaf query types that operate on values and not attributes.
  */
-abstract class SearchQueryLeafAttribute extends SearchQueryLeaf<SearchTextQueryValue> {
+abstract class SearchQueryLeafAttribute extends SearchQueryLeaf<TextSearchQueryValue> {
 
-    SearchQueryLeafAttribute(final SearchTextQueryValue value, final SearchNodeAttributeName name, final CaseSensitivity caseSensitivity) {
+    SearchQueryLeafAttribute(final TextSearchQueryValue value, final SearchNodeAttributeName name, final CaseSensitivity caseSensitivity) {
         super(value);
         this.attributeName = name;
         this.caseSensitivity = caseSensitivity;
@@ -38,42 +38,42 @@ abstract class SearchQueryLeafAttribute extends SearchQueryLeaf<SearchTextQueryV
 
 
     @Override
-    final void visit(final SearchBigDecimalNode node, final SearchQueryContext context) {
+    final void visit(final BigDecimalSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchBigIntegerNode node, final SearchQueryContext context) {
+    final void visit(final BigIntegerSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchDoubleNode node, final SearchQueryContext context) {
+    final void visit(final DoubleSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchLocalDateNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchLocalDateTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchLocalTimeNode node, final SearchQueryContext context) {
+    final void visit(final LocalTimeSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchLongNode node, final SearchQueryContext context) {
+    final void visit(final LongSearchNode node, final SearchQueryContext context) {
         // nop
     }
 
     @Override
-    final void visit(final SearchMetaNode node, final SearchQueryContext context) {
+    final void visit(final MetaSearchNode node, final SearchQueryContext context) {
         if(this.test(this.value.text(), node.attributes().get(this.attributeName))) {
             context.success(node);
         } else {
@@ -84,7 +84,7 @@ abstract class SearchQueryLeafAttribute extends SearchQueryLeaf<SearchTextQueryV
     abstract boolean test(final String text, final String attributeValue);
 
     @Override
-    final void visit(final SearchTextNode node, final SearchQueryContext context) {
+    final void visit(final TextSearchNode node, final SearchQueryContext context) {
         // nop
     }
 

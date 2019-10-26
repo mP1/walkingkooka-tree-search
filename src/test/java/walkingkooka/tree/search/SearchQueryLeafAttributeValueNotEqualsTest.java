@@ -66,7 +66,7 @@ public final class SearchQueryLeafAttributeValueNotEqualsTest extends SearchQuer
     }
 
     @Override
-    SearchQueryLeafAttributeValueNotEquals createSearchQuery(final SearchTextQueryValue queryValue,
+    SearchQueryLeafAttributeValueNotEquals createSearchQuery(final TextSearchQueryValue queryValue,
                                                              final SearchNodeAttributeName attributeName,
                                                              final CaseSensitivity sensitivity) {
         return SearchQueryLeafAttributeValueNotEquals.with(queryValue, attributeName, sensitivity);
