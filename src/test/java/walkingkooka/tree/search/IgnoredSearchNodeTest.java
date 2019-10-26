@@ -84,7 +84,6 @@ public final class IgnoredSearchNodeTest extends SearchNodeParentTestCase<Ignore
 
     @Override
     public void testReplaceChild() {
-        throw new UnsupportedOperationException();
     }
 
     @Test
@@ -94,7 +93,6 @@ public final class IgnoredSearchNodeTest extends SearchNodeParentTestCase<Ignore
 
     @Override
     public void testAppendChild2() {
-        throw new UnsupportedOperationException();
     }
 
     @Test
@@ -104,12 +102,10 @@ public final class IgnoredSearchNodeTest extends SearchNodeParentTestCase<Ignore
 
     @Override
     public void testRemoveChildLast() {
-        throw new UnsupportedOperationException();
     }
 
     @Override
     public void testParentWithoutChild() {
-        throw new UnsupportedOperationException();
     }
 
     @Test

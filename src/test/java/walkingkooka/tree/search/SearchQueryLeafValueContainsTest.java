@@ -29,12 +29,10 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
 
     @Override
     public void testNot() {
-        throw new UnsupportedOperationException();
     }
 
     @Override
     public void testNotTwiceGivesOriginalQuery() {
-        throw new UnsupportedOperationException();
     }
 
     // BigDecimal......................................................................................
