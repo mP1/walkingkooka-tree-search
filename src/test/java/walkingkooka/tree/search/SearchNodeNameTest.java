@@ -17,13 +17,23 @@
 
 package walkingkooka.tree.search;
 
+import org.junit.jupiter.api.Test;
 import walkingkooka.naming.NameTesting2;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.text.CaseSensitivity;
 
+import java.math.BigDecimal;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public final class SearchNodeNameTest implements ClassTesting2<SearchNodeName>,
         NameTesting2<SearchNodeName, SearchNodeName> {
+
+    @Test
+    public void testFromClass() {
+        assertEquals(SearchNodeName.with(BigDecimal.class.getSimpleName()), SearchNodeName.fromClass(BigDecimalSearchNode.class));
+    }
 
     @Override
     public SearchNodeName createName(final String name) {
