@@ -47,7 +47,7 @@ public final class SearchNodeName implements Name,
 
     static SearchNodeName fromClass(final Class<? extends SearchNode> klass) {
         final String name = klass.getSimpleName();
-        return new SearchNodeName(name.substring("Search".length(), name.length() - Name.class.getSimpleName().length()));
+        return new SearchNodeName(name.substring(0, name.length() - SearchNode.class.getSimpleName().length()));
     }
 
     // @VisibleForTesting
