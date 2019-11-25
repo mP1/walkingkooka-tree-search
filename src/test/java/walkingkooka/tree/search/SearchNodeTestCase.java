@@ -52,9 +52,9 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
 
     @Test
     public final void testPublicStaticFactoryMethod() {
-        PublicStaticFactoryTesting.check(SearchNode.class,
+        PublicStaticFactoryTesting.checkFactoryMethods(SearchNode.class,
                 "",
-                SearchNode.class,
+                SearchNode.class.getSimpleName(),
                 this.type());
     }
 
