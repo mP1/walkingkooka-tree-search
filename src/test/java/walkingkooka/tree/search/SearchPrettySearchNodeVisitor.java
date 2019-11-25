@@ -17,13 +17,12 @@
 
 package walkingkooka.tree.search;
 
+import walkingkooka.text.CharSequences;
 import walkingkooka.text.Indentation;
 import walkingkooka.text.LineEnding;
-import walkingkooka.text.printer.IndentingPrinters;
+import walkingkooka.text.printer.IndentingPrinter;
 import walkingkooka.text.printer.Printers;
-import walkingkooka.tree.Node;
 import walkingkooka.visit.Visiting;
-import walkingkooka.visit.VisitorPrettyPrinter;
 
 /**
  * Takes a {@link SearchNode} and pretty prints the nodes, making
@@ -33,109 +32,124 @@ final class SearchPrettySearchNodeVisitor extends SearchNodeVisitor {
     static String toString(final SearchNode node) {
         final StringBuilder b = new StringBuilder();
 
-        new SearchPrettySearchNodeVisitor(VisitorPrettyPrinter.with(
-                IndentingPrinters.printer(Printers.stringBuilder(b, LineEnding.NL), Indentation.with(' ', 2)),
-                SearchPrettySearchNodeVisitor::tokenName)).accept(node);
+        try (final IndentingPrinter printer = Printers.stringBuilder(b, LineEnding.NL).indenting(Indentation.with("  "))) {
+            new SearchPrettySearchNodeVisitor(printer).accept(node);
+            printer.flush();
+        }
         return b.toString();
     }
 
-    private static String tokenName(final SearchNode token) {
-        return VisitorPrettyPrinter.computeFromClassSimpleName(token, "Search", Node.class.getSimpleName());
-    }
-
-    private SearchPrettySearchNodeVisitor(final VisitorPrettyPrinter<SearchNode> printer) {
+    private SearchPrettySearchNodeVisitor(final IndentingPrinter printer) {
         this.printer = printer;
     }
 
     @Override
     protected Visiting startVisit(final IgnoredSearchNode node) {
-        this.printer.enter(node);
-        return super.startVisit(node);
+        return this.enter(node);
     }
 
     @Override
     protected void endVisit(final IgnoredSearchNode node) {
-        this.printer.exit(node);
-        super.endVisit(node);
+        this.exit(node);
     }
 
     @Override
     protected Visiting startVisit(final MetaSearchNode node) {
-        this.printer.enter(node);
-        return super.startVisit(node);
+        return this.enter(node);
     }
 
     @Override
     protected void endVisit(final MetaSearchNode node) {
-        this.printer.exit(node);
-        super.endVisit(node);
+        this.exit(node);
     }
 
     @Override
     protected Visiting startVisit(final SelectSearchNode node) {
-        this.printer.enter(node);
-        return super.startVisit(node);
+        return this.enter(node);
     }
 
     @Override
     protected void endVisit(final SelectSearchNode node) {
-        this.printer.exit(node);
-        super.endVisit(node);
+        this.exit(node);
     }
 
     @Override
     protected Visiting startVisit(final SequenceSearchNode node) {
-        this.printer.enter(node);
-        return super.startVisit(node);
+        return this.enter(node);
     }
 
     @Override
     protected void endVisit(final SequenceSearchNode node) {
-        this.printer.exit(node);
-        super.endVisit(node);
+        this.exit(node);
     }
 
     @Override
     protected void visit(final BigDecimalSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final BigIntegerSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final DoubleSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final LocalDateSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final LocalDateTimeSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final LocalTimeSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final LongSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
     @Override
     protected void visit(final TextSearchNode node) {
-        this.printer.leaf(node);
+        this.leaf(node);
     }
 
-    private final VisitorPrettyPrinter<SearchNode> printer;
+    private Visiting enter(final SearchNode node) {
+        this.printer.print(this.typeName(node));
+        this.printer.print(this.printer.lineEnding());
+        this.printer.indent();
+        return Visiting.CONTINUE;
+    }
+
+    /**
+     * All endVisit methods should call this.
+     */
+    private void exit(final SearchNode node) {
+        this.printer.outdent();
+    }
+
+    /**
+     * All visit methods should call this.
+     */
+    private void leaf(final SearchNode node) {
+        this.printer.print(this.typeName(node) + "=" + node);
+        this.printer.print(this.printer.lineEnding());
+    }
+
+    private String typeName(final SearchNode node) {
+        return CharSequences.subSequence(node.getClass().getSimpleName(), 0, -SearchNode.class.getSimpleName().length()).toString();
+    }
+
+    private final IndentingPrinter printer;
 
     @Override
     public String toString() {
