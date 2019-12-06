@@ -24,7 +24,7 @@ import walkingkooka.text.CharSequences;
 import walkingkooka.text.HasText;
 import walkingkooka.tree.Node;
 import walkingkooka.tree.TraversableHasTextOffset;
-import walkingkooka.tree.expression.ExpressionNodeName;
+import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.select.NodeSelector;
 import walkingkooka.tree.select.parser.NodeSelectorExpressionParserToken;
 
@@ -568,7 +568,7 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
      * Creates a {@link NodeSelector} for {@link SearchNode} from a {@link NodeSelectorExpressionParserToken}.
      */
     public static NodeSelector<SearchNode, SearchNodeName, SearchNodeAttributeName, String> nodeSelectorExpressionParserToken(final NodeSelectorExpressionParserToken token,
-                                                                                                                              final Predicate<ExpressionNodeName> functions) {
+                                                                                                                              final Predicate<FunctionExpressionName> functions) {
         return NodeSelector.parserToken(token,
                 n -> SearchNodeName.with(n.value()),
                 functions,
