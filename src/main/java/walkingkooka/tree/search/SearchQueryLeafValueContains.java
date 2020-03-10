@@ -27,6 +27,7 @@ import java.util.Objects;
 /**
  * Searches the text of a {@link SearchQueryValue} if it contains text.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 final class SearchQueryLeafValueContains extends SearchQueryLeaf<TextSearchQueryValue> {
 
     static SearchQueryLeafValueContains with(final TextSearchQueryValue value, final CaseSensitivity caseSensitivity) {

@@ -21,6 +21,7 @@ import walkingkooka.Cast;
 
 import java.util.Objects;
 
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchQueryParentBinary extends SearchQueryParent {
 
     static void check(final SearchQuery left, final SearchQuery right) {

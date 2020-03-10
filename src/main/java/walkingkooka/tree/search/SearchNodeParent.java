@@ -26,6 +26,7 @@ import java.util.Optional;
 /**
  * Base class for all {@link SearchNode} that hold more chidren.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchNodeParent extends SearchNode {
 
     /**
