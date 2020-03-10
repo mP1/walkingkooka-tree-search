@@ -30,6 +30,7 @@ import java.util.function.Function;
 /**
  * The base {@link SearchNode} for all leaf values that hold a value.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchNodeLeaf<V> extends SearchNode implements Value<V> {
 
     static <V> void check(final String text, final V value) {

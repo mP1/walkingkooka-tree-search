@@ -24,6 +24,7 @@ import java.util.Objects;
 /**
  * Base {@link SearchQueryLeaf} that operate on values with a {@link SearchQueryTester}
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchQueryLeafValue extends SearchQueryLeaf<SearchQueryValue> {
 
     SearchQueryLeafValue(final SearchQueryValue value, final SearchQueryTester tester) {

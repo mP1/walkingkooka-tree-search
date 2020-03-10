@@ -25,6 +25,7 @@ import java.util.Objects;
 /**
  * Base class for all leaf query types that operate on values and not attributes.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchQueryLeafAttribute extends SearchQueryLeaf<TextSearchQueryValue> {
 
     SearchQueryLeafAttribute(final TextSearchQueryValue value, final SearchNodeAttributeName name, final CaseSensitivity caseSensitivity) {

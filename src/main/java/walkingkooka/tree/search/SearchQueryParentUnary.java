@@ -24,6 +24,7 @@ import java.util.Objects;
 /**
  * Base class for all queries that wrap another query.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class SearchQueryParentUnary extends SearchQueryParent {
 
     static void check(final SearchQuery query) {
