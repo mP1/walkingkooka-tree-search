@@ -132,11 +132,6 @@ public final class SequenceSearchNode extends SearchNodeParent2 {
 
                 // replacement probably covers several old children..
                 newChildren.add(replace);
-
-                // part of child may remain...
-                if (replaceEndOffset < childEndOffset) {
-                    newChildren.add(child.extract(replaceEndOffset - childBeginOffset, childEndOffset - childBeginOffset));
-                }
                 continue;
             }
 
