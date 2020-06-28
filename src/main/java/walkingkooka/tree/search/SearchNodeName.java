@@ -35,14 +35,17 @@ public final class SearchNodeName implements Name,
         return new SearchNodeName(name);
     }
 
+    // previously used isJavaIdentifier but this was simplified because J2cl Character does not support these methods.
+
     private final static CharPredicate INITIAL = CharPredicateBuilder.empty()
-            .or(Character::isJavaIdentifierStart)
-            .andNot(CharPredicates.asciiControl()) // necessary because nul is also valid java identifier
+            .or(CharPredicates.letter())
+            .any("$-_")
             .build();
+
     private final static CharPredicate PART = CharPredicateBuilder.empty()
-            .or(Character::isJavaIdentifierPart)
+            .or(CharPredicates.letterOrDigit())
+            .any("$-_")
             .any("-")
-            .andNot(CharPredicates.asciiControl()) // necessary because nul is also valid java identifier
             .build();
 
     static SearchNodeName fromClass(final Class<? extends SearchNode> klass) {
