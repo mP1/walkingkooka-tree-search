@@ -23,7 +23,6 @@ import walkingkooka.visit.Visiting;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -61,14 +60,14 @@ public final class SelectSearchNodeTest extends SearchNodeParentTestCase<SelectS
     public void testSetChildrenWithDifferentSelectedChild() {
         final SelectSearchNode node = this.createSearchNode();
         final SearchNode child = this.differentSearchNode();
-        assertEquals(child.selected(), node.setChildren(Lists.of(child.selected())));
+        this.checkEquals(child.selected(), node.setChildren(Lists.of(child.selected())));
     }
 
     @Test
     public final void testReplaceAll() {
         final SelectSearchNode node = this.createSearchNode();
         final SearchNode replace = this.replaceNode();
-        assertEquals(replace.selected(), node.replace(0, node.text().length(), replace));
+        this.checkEquals(replace.selected(), node.replace(0, node.text().length(), replace));
     }
 
     @Test
@@ -76,7 +75,7 @@ public final class SelectSearchNodeTest extends SearchNodeParentTestCase<SelectS
         final SelectSearchNode node = SelectSearchNode.with(this.text("123"));
         final TextSearchNode replacing = this.text("REPLACEMENT");
         final SearchNode replaced = node.replace(1, 2, replacing);
-        assertEquals(this.sequence(this.text("1"), replacing, this.text("3")).selected(), replaced);
+        this.checkEquals(this.sequence(this.text("1"), replacing, this.text("3")).selected(), replaced);
     }
 
     @Override
@@ -107,7 +106,7 @@ public final class SelectSearchNodeTest extends SearchNodeParentTestCase<SelectS
 
     @Test
     public void testText() {
-        assertEquals(this.child().text(), this.createSearchNode().text());
+        this.checkEquals(this.child().text(), this.createSearchNode().text());
     }
 
     @Test
@@ -186,7 +185,7 @@ public final class SelectSearchNodeTest extends SearchNodeParentTestCase<SelectS
             }
         }.accept(node);
 
-        assertEquals("1315242", b.toString());
+        this.checkEquals("1315242", b.toString());
     }
 
     @Test

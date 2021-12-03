@@ -20,7 +20,6 @@ package walkingkooka.tree.search;
 import org.junit.jupiter.api.Test;
 import walkingkooka.visit.Visiting;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public final class TextSearchNodeTest extends SearchNodeLeafTestCase<TextSearchNode, String> {
@@ -30,7 +29,7 @@ public final class TextSearchNodeTest extends SearchNodeLeafTestCase<TextSearchN
         final TextSearchNode node = this.createSearchNode();
         final SearchNode replace = this.text("XYZ");
 
-        assertEquals(this.sequence(this.text("ab"), this.text("XYZ"), this.text("ef")), node.replace(2, 4, replace));
+        this.checkEquals(this.sequence(this.text("ab"), this.text("XYZ"), this.text("ef")), node.replace(2, 4, replace));
     }
 
     @Test
@@ -38,7 +37,7 @@ public final class TextSearchNodeTest extends SearchNodeLeafTestCase<TextSearchN
         final TextSearchNode node = this.createSearchNode();
         final SearchNode replace = this.text("XYZ");
 
-        assertEquals(this.sequence(this.text("abc"), this.text("XYZ"), this.text("def")), node.replace(3, 3, replace));
+        this.checkEquals(this.sequence(this.text("abc"), this.text("XYZ"), this.text("def")), node.replace(3, 3, replace));
     }
 
     @Test
@@ -67,7 +66,7 @@ public final class TextSearchNodeTest extends SearchNodeLeafTestCase<TextSearchN
             }
         }.accept(node);
 
-        assertEquals("132", b.toString());
+        this.checkEquals("132", b.toString());
     }
 
     // ToString ...................................................................................................

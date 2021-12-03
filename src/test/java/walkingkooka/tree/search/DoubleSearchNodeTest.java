@@ -20,7 +20,6 @@ package walkingkooka.tree.search;
 import org.junit.jupiter.api.Test;
 import walkingkooka.visit.Visiting;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public final class DoubleSearchNodeTest extends SearchNodeLeafTestCase<DoubleSearchNode, Double> {
@@ -51,7 +50,7 @@ public final class DoubleSearchNodeTest extends SearchNodeLeafTestCase<DoubleSea
             }
         }.accept(node);
 
-        assertEquals("132", b.toString());
+        this.checkEquals("132", b.toString());
     }
 
     // ToString ...................................................................................................

@@ -20,8 +20,6 @@ package walkingkooka.tree.search;
 import org.junit.jupiter.api.Test;
 import walkingkooka.collect.list.Lists;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -35,7 +33,7 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
     @Test
     public final void testCreate() {
         final N node = this.createSearchNode();
-        assertEquals(Lists.empty(), node.children(), "children");
+        this.checkEquals(Lists.empty(), node.children(), "children");
         this.parentMissingCheck(node);
         this.checkValue(node, this.value());
         this.textAndCheck(node, this.text());
@@ -74,7 +72,7 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
         final N node = this.createSearchNode();
 
         final IgnoredSearchNode parent = node.ignored();
-        assertEquals(node, parent.child().removeParent());
+        this.checkEquals(node, parent.child().removeParent());
     }
 
     @Test
@@ -106,7 +104,7 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
         final SearchNode replacing = this.replaceNode();
         final SearchNode replaced = node.replace(beginOffset, text.length(), replacing);
 
-        assertEquals(this.sequence(this.text(before), replacing), replaced);
+        this.checkEquals(this.sequence(this.text(before), replacing), replaced);
     }
 
     @Test
@@ -131,7 +129,7 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
 
         final SearchNode replacing = this.replaceNode();
         final SearchNode replaced = node.replace(beginOffset, endOffset, replacing);
-        assertEquals(this.sequence(this.text(before), replacing, this.text(after)), replaced);
+        this.checkEquals(this.sequence(this.text(before), replacing, this.text(after)), replaced);
     }
 
     @Test
@@ -155,21 +153,21 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
 
         final SearchNode replacing = this.replaceNode();
         final SearchNode replaced = node.replace(0, endOffset, replacing);
-        assertEquals(this.sequence(replacing, this.text(after)), replaced);
+        this.checkEquals(this.sequence(replacing, this.text(after)), replaced);
     }
 
     @Test
     public final void testIgnored() {
         final N node = this.createSearchNode();
         final IgnoredSearchNode ignored = node.ignored();
-        assertEquals(SearchNode.ignored(node), ignored, "ignored with child");
+        this.checkEquals(SearchNode.ignored(node), ignored, "ignored with child");
     }
 
     @Test
     public final void testSelected() {
         final N node = this.createSearchNode();
         final SelectSearchNode selected = node.selected();
-        assertEquals(SearchNode.select(node), selected, "ignored with child");
+        this.checkEquals(SearchNode.select(node), selected, "ignored with child");
     }
 
     @Test
@@ -179,7 +177,7 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
 
     @Test
     public void testEqualsDifferentValue() {
-        assertNotEquals(this.createSearchNode(), this.createSearchNode(this.differentText(), this.differentValue()));
+        this.checkNotEquals(this.createSearchNode(), this.createSearchNode(this.differentText(), this.differentValue()));
     }
 
     @Test
@@ -222,6 +220,6 @@ public abstract class SearchNodeLeafTestCase<N extends SearchNodeLeaf<V>, V> ext
     }
 
     final void checkValue(final N node, final V value) {
-        assertEquals(value, node.value(), "value");
+        this.checkEquals(value, node.value(), "value");
     }
 }

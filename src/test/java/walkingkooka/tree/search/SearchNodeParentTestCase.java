@@ -23,7 +23,6 @@ import walkingkooka.tree.ParentNodeTesting;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -69,7 +68,7 @@ public abstract class SearchNodeParentTestCase<N extends SearchNodeParent> exten
 
     final void checkChildren(final N node, final List<SearchNode> children) {
         // horrible if equals is used comparison will fail because children have different parents.
-        assertEquals(children.toString(), node.children().toString(), "children");
+        this.checkEquals(children.toString(), node.children().toString(), "children");
     }
 
     @Override

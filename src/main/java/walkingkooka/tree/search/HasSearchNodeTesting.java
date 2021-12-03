@@ -17,12 +17,12 @@
 
 package walkingkooka.tree.search;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import walkingkooka.test.Testing;
 
-public interface HasSearchNodeTesting<H extends HasSearchNode> {
+public interface HasSearchNodeTesting<H extends HasSearchNode> extends Testing {
 
     default void toSearchNodeAndCheck(final H has, final SearchNode searchNode) {
-        assertEquals(searchNode,
+        this.checkEquals(searchNode,
                 has.toSearchNode(),
                 () -> "toSearchNode failure from " + has);
     }

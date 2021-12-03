@@ -22,7 +22,6 @@ import walkingkooka.visit.Visiting;
 
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public final class LocalTimeSearchNodeTest extends SearchNodeLeafTestCase<LocalTimeSearchNode, LocalTime> {
@@ -56,7 +55,7 @@ public final class LocalTimeSearchNodeTest extends SearchNodeLeafTestCase<LocalT
             }
         }.accept(node);
 
-        assertEquals("132", b.toString());
+        this.checkEquals("132", b.toString());
     }
 
     // ToString ...................................................................................................

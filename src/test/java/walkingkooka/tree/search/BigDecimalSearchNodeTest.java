@@ -22,7 +22,6 @@ import walkingkooka.visit.Visiting;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public final class BigDecimalSearchNodeTest extends SearchNodeLeafTestCase<BigDecimalSearchNode, BigDecimal> {
@@ -53,7 +52,7 @@ public final class BigDecimalSearchNodeTest extends SearchNodeLeafTestCase<BigDe
             }
         }.accept(node);
 
-        assertEquals("132", b.toString());
+        this.checkEquals("132", b.toString());
     }
 
     // ToString ...................................................................................................
