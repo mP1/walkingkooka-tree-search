@@ -25,14 +25,12 @@ import walkingkooka.text.CaseSensitivity;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public final class SearchNodeNameTest implements ClassTesting2<SearchNodeName>,
         NameTesting2<SearchNodeName, SearchNodeName> {
 
     @Test
     public void testFromClass() {
-        assertEquals(SearchNodeName.with(BigDecimal.class.getSimpleName()), SearchNodeName.fromClass(BigDecimalSearchNode.class));
+        this.checkEquals(SearchNodeName.with(BigDecimal.class.getSimpleName()), SearchNodeName.fromClass(BigDecimalSearchNode.class));
     }
 
     @Override

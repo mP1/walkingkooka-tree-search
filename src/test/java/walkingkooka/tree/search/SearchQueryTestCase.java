@@ -31,8 +31,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public abstract class SearchQueryTestCase<Q extends SearchQuery> implements ClassTesting2<Q>,
@@ -73,13 +71,13 @@ public abstract class SearchQueryTestCase<Q extends SearchQuery> implements Clas
     public void testNot() {
         final Q query = this.createSearchQuery();
         final SearchQuery not = query.not();
-        assertNotEquals(query, not);
+        this.checkNotEquals(query, not);
     }
 
     @Test
     public void testNotTwiceGivesOriginalQuery() {
         final Q query = this.createSearchQuery();
-        assertEquals(query, query.not().not());
+        this.checkEquals(query, query.not().not());
     }
 
     // query testing.....................................................................................................
@@ -108,7 +106,7 @@ public abstract class SearchQueryTestCase<Q extends SearchQuery> implements Clas
 
     private void checkEquals(final String message, final SearchNode expected, final SearchNode actual) {
         if (!expected.equals(actual)) {
-            assertEquals(message,
+            this.checkEquals(message,
                     this.toString(expected),
                     this.toString(actual));
         }

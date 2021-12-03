@@ -34,7 +34,6 @@ import java.lang.reflect.Method;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -75,14 +74,14 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
         final SearchNodeName name = SearchNodeName.with("different");
         final N different = node.setName(name).cast();
         assertNotSame(node, different);
-        assertEquals(name, different.name(), "name");
+        this.checkEquals(name, different.name(), "name");
     }
 
     @Test
     public final void testSetNameReturnType() throws Exception {
         final Class<N> type = this.searchNodeType();
         final Method method = type.getMethod("setName", SearchNodeName.class);
-        assertEquals(type, method.getReturnType(), method::toGenericString);
+        this.checkEquals(type, method.getReturnType(), method::toGenericString);
     }
 
     @Test
@@ -172,7 +171,7 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
     final void replaceSelectedAndCheck(final SearchNode node,
                                        final Function<SelectSearchNode, SearchNode> replacer,
                                        final SearchNode expected) {
-        assertEquals(expected, node.replaceSelected(replacer), node.toString());
+        this.checkEquals(expected, node.replaceSelected(replacer), node.toString());
     }
 
     final void replaceSelectedNothingAndCheck(final SearchNode node) {

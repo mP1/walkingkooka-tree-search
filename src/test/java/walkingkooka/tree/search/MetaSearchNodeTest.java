@@ -26,7 +26,6 @@ import walkingkooka.visit.Visiting;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -73,7 +72,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
     public final void testReplaceAll() {
         final MetaSearchNode node = this.createSearchNode();
         final SearchNode replace = this.replaceNode();
-        assertEquals(replace.selected(), node.replace(0, node.text().length(), replace));
+        this.checkEquals(replace.selected(), node.replace(0, node.text().length(), replace));
     }
 
     @Test
@@ -81,7 +80,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
         final MetaSearchNode node = MetaSearchNode.with(this.text("123"), this.attributes());
         final TextSearchNode replacing = this.text("REPLACEMENT");
         final SearchNode replaced = node.replace(1, 2, replacing);
-        assertEquals(this.sequence(this.text("1"), replacing, this.text("3")).selected(), replaced);
+        this.checkEquals(this.sequence(this.text("1"), replacing, this.text("3")).selected(), replaced);
     }
 
     @Override
@@ -140,7 +139,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
 
     @Test
     public void testText() {
-        assertEquals(this.child().text(), this.createSearchNode().text());
+        this.checkEquals(this.child().text(), this.createSearchNode().text());
     }
 
     @Test
@@ -203,7 +202,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
     public void testQuery() {
         final MetaSearchNode node = this.createSearchNode();
         final SearchQuery query = SearchQueryValue.text(CHILD_TEXT).equalsQuery(CaseSensitivity.SENSITIVE);
-        assertEquals(this.child().selected().setAttributes(this.attributes()),
+        this.checkEquals(this.child().selected().setAttributes(this.attributes()),
                 query.select(node),
                 "child selected");
     }
@@ -246,7 +245,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
             }
         }.accept(node);
 
-        assertEquals("1315242", b.toString());
+        this.checkEquals("1315242", b.toString());
     }
 
     @Test
@@ -284,7 +283,7 @@ public final class MetaSearchNodeTest extends SearchNodeParentTestCase<MetaSearc
     }
 
     private void checkAttributes(final SearchNode node, final Map<SearchNodeAttributeName, String> attributes) {
-        assertEquals(attributes, node.attributes(), "attributes");
+        this.checkEquals(attributes, node.attributes(), "attributes");
     }
 
     @Override

@@ -24,7 +24,6 @@ import walkingkooka.visit.Visiting;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -52,7 +51,7 @@ public final class SequenceSearchNodeTest extends SearchNodeParentTestCase<Seque
 
     @Test
     public void testText() {
-        assertEquals("abcdEFGH", this.createSearchNode().text());
+        this.checkEquals("abcdEFGH", this.createSearchNode().text());
     }
 
     @Test
@@ -91,7 +90,7 @@ public final class SequenceSearchNodeTest extends SearchNodeParentTestCase<Seque
             }
         }.accept(node);
 
-        assertEquals("1315215242", b.toString());
+        this.checkEquals("1315215242", b.toString());
     }
 
     // extract ..............................................................................................................
@@ -179,7 +178,7 @@ public final class SequenceSearchNodeTest extends SearchNodeParentTestCase<Seque
     }
 
     private void extractAndCheck(final SequenceSearchNode sequence, final int beginOffset, final int endOffset, final SearchNode expected) {
-        assertEquals(expected,
+        this.checkEquals(expected,
                 sequence.extract(beginOffset, endOffset),
                 "sequence " + sequence + " begin: " + beginOffset + " end: " + endOffset);
     }
@@ -308,7 +307,7 @@ public final class SequenceSearchNodeTest extends SearchNodeParentTestCase<Seque
     private void replaceAndCheck(final SequenceSearchNode search, final int beginOffset, final int endOffset, final SearchNode... children) {
         final SearchNode replace = this.replaceNode();
 
-        assertEquals(this.sequence(children),
+        this.checkEquals(this.sequence(children),
                 search.replace(beginOffset, endOffset, replace),
                 search + " replace " + beginOffset + "," + endOffset + " with " + replace + " failed");
     }

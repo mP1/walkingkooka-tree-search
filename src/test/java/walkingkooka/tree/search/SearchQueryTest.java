@@ -38,8 +38,6 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
         ResourceTesting {
 
@@ -131,7 +129,7 @@ public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
         // convert SearchNode back into text.
         final String expected = this.resourceAsText(test + ".expected.txt");
 
-        assertEquals(expected,
+        this.checkEquals(expected,
                 replaced.text(),
                 "search and replace failed\n" + input);
     }
