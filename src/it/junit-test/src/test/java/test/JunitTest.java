@@ -51,7 +51,7 @@ public class JunitTest {
         final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(CharPredicates.whitespace(), 1, 100).cast();
         final Parser<ParserContext> other = Parsers.stringCharPredicate(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
 
-        final Parser<ParserContext> parser = Parsers.repeated(
+        final Parser<ParserContext> parser = Parsers.repeating(
                 Parsers.alternatives(Lists.of(words, whitespace, other)))
                 .orReport(ParserReporters.basic());
 
