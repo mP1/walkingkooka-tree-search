@@ -32,7 +32,7 @@ final class SearchPrettySearchNodeVisitor extends SearchNodeVisitor {
     static String toString(final SearchNode node) {
         final StringBuilder b = new StringBuilder();
 
-        try (final IndentingPrinter printer = Printers.stringBuilder(b, LineEnding.NL).indenting(Indentation.with("  "))) {
+        try (final IndentingPrinter printer = Printers.stringBuilder(b, LineEnding.NL).indenting(Indentation.SPACES2)) {
             new SearchPrettySearchNodeVisitor(printer).accept(node);
             printer.flush();
         }
