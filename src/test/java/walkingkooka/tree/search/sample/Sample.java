@@ -44,24 +44,32 @@ public final class Sample {
         final String input = "apple banana carrot dog egg";
 
         // boring tokenize on space...
-        final Parser<ParserContext> words = Parsers.stringCharPredicate(CharPredicates.letterOrDigit(), 1, 100).cast();
-        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(CharPredicates.whitespace(), 1, 100).cast();
-        final Parser<ParserContext> other = Parsers.stringCharPredicate(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
+        final Parser<ParserContext> words = Parsers.stringCharPredicate(CharPredicates.letterOrDigit(), 1, 100);
+        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(CharPredicates.whitespace(), 1, 100);
+        final Parser<ParserContext> other = Parsers.stringCharPredicate(
+                CharPredicates.whitespace()
+                        .or(CharPredicates.letterOrDigit())
+                        .negate(), 1, 100
+        );
 
         final Parser<ParserContext> parser = Parsers.repeating(
                         Parsers.alternatives(Lists.of(words, whitespace, other)))
                 .orReport(ParserReporters.basic());
 
-        final Optional<ParserToken> tokens = parser.parse(TextCursors.charSequence(input), new FakeParserContext());
+        final Optional<ParserToken> tokens = parser.parse(
+                TextCursors.charSequence(input),
+                new FakeParserContext()
+        );
 
         // convert into SearchTextNodes
-        final SequenceSearchNode nodes = SearchNode.sequence(tokens.get()
-                .cast(RepeatedParserToken.class)
-                .flat()
-                .value()
-                .stream()
-                .map(t -> SearchNode.text(t.text(), t.text()))
-                .collect(Collectors.toList()));
+        final SequenceSearchNode nodes = SearchNode.sequence(
+                tokens.get()
+                        .cast(RepeatedParserToken.class)
+                        .flat()
+                        .value()
+                        .stream()
+                        .map(t -> SearchNode.text(t.text(), t.text()))
+                        .collect(Collectors.toList()));
 
         final String searchFor = "BANANA";
         final CaseSensitivity caseSensitivity = CaseSensitivity.INSENSITIVE;
@@ -81,8 +89,10 @@ public final class Sample {
         // convert SearchNode back into text.
         final String expected = "apple zebra carrot dog egg";
 
-        assertEquals(expected,
+        assertEquals(
+                expected,
                 replaced.text(),
-                "search and replace failed\n" + input);
+                "search and replace failed\n" + input
+        );
     }
 }
