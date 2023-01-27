@@ -64,7 +64,7 @@ public final class SelectSearchNodeTest extends SearchNodeParentTestCase<SelectS
     }
 
     @Test
-    public final void testReplaceAll() {
+    public void testReplaceAll() {
         final SelectSearchNode node = this.createSearchNode();
         final SearchNode replace = this.replaceNode();
         this.checkEquals(replace.selected(), node.replace(0, node.text().length(), replace));

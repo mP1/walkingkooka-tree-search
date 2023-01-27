@@ -93,7 +93,7 @@ public final class MetaSearchNode extends SearchNodeParent {
      * While copying unwraps any {@link IgnoredSearchNode}
      */
     @Override
-    final List<SearchNode> copyChildren(final List<SearchNode> children) {
+    List<SearchNode> copyChildren(final List<SearchNode> children) {
         return Lists.immutable(children);
     }
 
@@ -131,7 +131,7 @@ public final class MetaSearchNode extends SearchNodeParent {
      * Would be setter that returns a {@link MetaSearchNode} with the given attributes, or this if attributes also match.
      */
     @Override
-    final MetaSearchNode setAttributes0(final Map<SearchNodeAttributeName, String> attributes) {
+    MetaSearchNode setAttributes0(final Map<SearchNodeAttributeName, String> attributes) {
         return this.attributes.equals(attributes) ?
                 this :
                 new MetaSearchNode(this.index, this.name, this.children, attributes)
@@ -152,7 +152,7 @@ public final class MetaSearchNode extends SearchNodeParent {
     }
 
     @Override
-    final SearchNode extract0(final int beginOffset, final int endOffset, final String text) {
+    SearchNode extract0(final int beginOffset, final int endOffset, final String text) {
         return this.text1(beginOffset, endOffset, text).selected();
     }
 
@@ -219,7 +219,7 @@ public final class MetaSearchNode extends SearchNodeParent {
     }
 
     @Override
-    final boolean equalsIgnoringParentAndChildren0(final SearchNode other) {
+    boolean equalsIgnoringParentAndChildren0(final SearchNode other) {
         return this.canBeEqual(other) && this.equalsIgnoringParentAndChildren1(other.cast());
     }
 

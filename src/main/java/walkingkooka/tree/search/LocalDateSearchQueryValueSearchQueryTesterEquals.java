@@ -38,7 +38,7 @@ final class LocalDateSearchQueryValueSearchQueryTesterEquals extends LocalDateSe
     }
 
     @Override
-    final boolean test(final LocalDateSearchNode node) {
+    boolean test(final LocalDateSearchNode node) {
         return this.value.equals(node.value());
     }
 

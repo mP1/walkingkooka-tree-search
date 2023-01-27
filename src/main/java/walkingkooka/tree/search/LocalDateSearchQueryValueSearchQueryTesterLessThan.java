@@ -38,7 +38,7 @@ final class LocalDateSearchQueryValueSearchQueryTesterLessThan extends LocalDate
     }
 
     @Override
-    final boolean test(final LocalDateSearchNode node) {
+    boolean test(final LocalDateSearchNode node) {
         return node.value().isBefore(this.value);
     }
 

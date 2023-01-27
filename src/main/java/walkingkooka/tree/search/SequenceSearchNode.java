@@ -93,7 +93,7 @@ public final class SequenceSearchNode extends SearchNodeParent2 {
     // ==========
 
     @Override
-    final SearchNode replace0(final int replaceBeginOffset, final int replaceEndOffset, final SearchNode replace, final String ignored) {
+    SearchNode replace0(final int replaceBeginOffset, final int replaceEndOffset, final SearchNode replace, final String ignored) {
         final List<SearchNode> newChildren = Lists.array();
         int textOffset = 0;
 
@@ -164,7 +164,7 @@ public final class SequenceSearchNode extends SearchNodeParent2 {
     }
 
     @Override
-    final SearchNode extract0(final int extractBeginOffset, final int extractEndOffset, final String ignoredText) {
+    SearchNode extract0(final int extractBeginOffset, final int extractEndOffset, final String ignoredText) {
         final List<SearchNode> extracted = Lists.array();
         int textOffset = 0;
 

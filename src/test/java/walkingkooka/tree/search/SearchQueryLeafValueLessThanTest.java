@@ -25,7 +25,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // BigDecimal......................................................................................
 
     @Test
-    public final void testBigDecimalLess() {
+    public void testBigDecimalLess() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_LT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThan();
 
@@ -33,7 +33,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalEqual() {
+    public void testBigDecimalEqual() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThan();
 
@@ -41,7 +41,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalGreater() {
+    public void testBigDecimalGreater() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_GT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThan();
 
@@ -49,7 +49,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalReplaceSelection() {
+    public void testBigDecimalReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -64,7 +64,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalNewSelection() {
+    public void testBigDecimalNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -79,7 +79,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalIgnoresOtherTypes() {
+    public void testBigDecimalIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -102,7 +102,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigDecimalLessNot() {
+    public void testBigDecimalLessNot() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE_LT);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE).lessThan().not();
 
@@ -112,7 +112,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // BigInteger......................................................................................
 
     @Test
-    public final void testBigIntegerLess() {
+    public void testBigIntegerLess() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_LT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThan();
 
@@ -120,7 +120,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerEqual() {
+    public void testBigIntegerEqual() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThan();
 
@@ -128,7 +128,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerGreater() {
+    public void testBigIntegerGreater() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_GT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThan();
 
@@ -136,7 +136,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerReplaceSelection() {
+    public void testBigIntegerReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -151,7 +151,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerNewSelection() {
+    public void testBigIntegerNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -166,7 +166,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerIgnoresOtherTypes() {
+    public void testBigIntegerIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -189,7 +189,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testBigIntegerLessNot() {
+    public void testBigIntegerLessNot() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE_LT);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE).lessThan().not();
 
@@ -199,7 +199,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // Double......................................................................................
 
     @Test
-    public final void testDoubleLess() {
+    public void testDoubleLess() {
         final DoubleSearchNode node = this.doubleNode(VALUE_LT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThan();
 
@@ -207,7 +207,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleEqual() {
+    public void testDoubleEqual() {
         final DoubleSearchNode node = this.doubleNode(VALUE);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThan();
 
@@ -215,7 +215,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleGreater() {
+    public void testDoubleGreater() {
         final DoubleSearchNode node = this.doubleNode(VALUE_GT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThan();
 
@@ -223,7 +223,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleReplaceSelection() {
+    public void testDoubleReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -238,7 +238,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleNewSelection() {
+    public void testDoubleNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -253,7 +253,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleIgnoresOtherTypes() {
+    public void testDoubleIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -276,7 +276,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testDoubleLessNot() {
+    public void testDoubleLessNot() {
         final DoubleSearchNode node = this.doubleNode(VALUE_LT);
         final SearchQuery query = this.doubleQueryValue(VALUE).lessThan().not();
 
@@ -286,7 +286,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // LocalDate......................................................................................
 
     @Test
-    public final void testLocalDateLess() {
+    public void testLocalDateLess() {
         final LocalDateSearchNode node = this.localDateNode(DATE_LT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThan();
 
@@ -294,7 +294,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateEqual() {
+    public void testLocalDateEqual() {
         final LocalDateSearchNode node = this.localDateNode(DATE);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThan();
 
@@ -302,7 +302,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateGreater() {
+    public void testLocalDateGreater() {
         final LocalDateSearchNode node = this.localDateNode(DATE_GT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThan();
 
@@ -310,7 +310,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateReplaceSelection() {
+    public void testLocalDateReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -325,7 +325,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateNewSelection() {
+    public void testLocalDateNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -340,7 +340,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateIgnoresOtherTypes() {
+    public void testLocalDateIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -363,7 +363,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateLessNot() {
+    public void testLocalDateLessNot() {
         final LocalDateSearchNode node = this.localDateNode(DATE_LT);
         final SearchQuery query = this.localDateQueryValue(DATE).lessThan().not();
 
@@ -373,7 +373,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // LocalDateTime......................................................................................
 
     @Test
-    public final void testLocalDateTimeLess() {
+    public void testLocalDateTimeLess() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_LT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThan();
 
@@ -381,7 +381,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeEqual() {
+    public void testLocalDateTimeEqual() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThan();
 
@@ -389,7 +389,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeGreater() {
+    public void testLocalDateTimeGreater() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_GT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThan();
 
@@ -397,7 +397,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeReplaceSelection() {
+    public void testLocalDateTimeReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -412,7 +412,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeNewSelection() {
+    public void testLocalDateTimeNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -427,7 +427,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeIgnoresOtherTypes() {
+    public void testLocalDateTimeIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -450,7 +450,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalDateTimeLessNot() {
+    public void testLocalDateTimeLessNot() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME_LT);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME).lessThan().not();
 
@@ -460,7 +460,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // LocalTime......................................................................................
 
     @Test
-    public final void testLocalTimeLess() {
+    public void testLocalTimeLess() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME_LT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThan();
 
@@ -468,7 +468,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeEqual() {
+    public void testLocalTimeEqual() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThan();
 
@@ -476,7 +476,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeGreater() {
+    public void testLocalTimeGreater() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME_GT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThan();
 
@@ -484,7 +484,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeReplaceSelection() {
+    public void testLocalTimeReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -499,7 +499,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeNewSelection() {
+    public void testLocalTimeNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -514,7 +514,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeIgnoresOtherTypes() {
+    public void testLocalTimeIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -537,7 +537,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLocalTimeLessNot() {
+    public void testLocalTimeLessNot() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME_LT);
         final SearchQuery query = this.localTimeQueryValue(TIME).lessThan().not();
 
@@ -547,7 +547,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // Long......................................................................................
 
     @Test
-    public final void testLongLess() {
+    public void testLongLess() {
         final LongSearchNode node = this.longNode(VALUE_LT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThan();
 
@@ -555,7 +555,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongEqual() {
+    public void testLongEqual() {
         final LongSearchNode node = this.longNode(VALUE);
         final SearchQuery query = this.longQueryValue(VALUE).lessThan();
 
@@ -563,7 +563,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongGreater() {
+    public void testLongGreater() {
         final LongSearchNode node = this.longNode(VALUE_GT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThan();
 
@@ -571,7 +571,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongReplaceSelection() {
+    public void testLongReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -586,7 +586,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongNewSelection() {
+    public void testLongNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -601,7 +601,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongIgnoresOtherTypes() {
+    public void testLongIgnoresOtherTypes() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -624,7 +624,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testLongLessNot() {
+    public void testLongLessNot() {
         final LongSearchNode node = this.longNode(VALUE_LT);
         final SearchQuery query = this.longQueryValue(VALUE).lessThan().not();
 
@@ -634,7 +634,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // Text......................................................................................
 
     @Test
-    public final void testTextLess() {
+    public void testTextLess() {
         final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThan(CaseSensitivity.SENSITIVE);
 
@@ -642,7 +642,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextEqual() {
+    public void testTextEqual() {
         final TextSearchNode node = this.textNode(TEXT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThan(CaseSensitivity.SENSITIVE);
 
@@ -650,7 +650,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextGreater() {
+    public void testTextGreater() {
         final TextSearchNode node = this.textNode(TEXT_GT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThan(CaseSensitivity.SENSITIVE);
 
@@ -658,7 +658,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextReplaceSelection() {
+    public void testTextReplaceSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -673,7 +673,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextNewSelection() {
+    public void testTextNewSelection() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -688,7 +688,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextLessNot() {
+    public void testTextLessNot() {
         final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT).lessThan(CaseSensitivity.SENSITIVE).not();
 
@@ -698,7 +698,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     // Text Insensitive.................................................................................................
 
     @Test
-    public final void testTextLessInsensitive() {
+    public void testTextLessInsensitive() {
         final TextSearchNode node = this.textNode(TEXT_LT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThan(CaseSensitivity.INSENSITIVE);
 
@@ -706,7 +706,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextEqualInsensitive() {
+    public void testTextEqualInsensitive() {
         final TextSearchNode node = this.textNode(TEXT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThan(CaseSensitivity.INSENSITIVE);
 
@@ -714,7 +714,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextGreaterInsensitive() {
+    public void testTextGreaterInsensitive() {
         final TextSearchNode node = this.textNode(TEXT_GT);
         final SearchQuery query = this.textQueryValue(TEXT2).lessThan(CaseSensitivity.INSENSITIVE);
 
@@ -722,7 +722,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextReplaceSelectionInsensitive() {
+    public void testTextReplaceSelectionInsensitive() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -737,7 +737,7 @@ public final class SearchQueryLeafValueLessThanTest extends SearchQueryLeafValue
     }
 
     @Test
-    public final void testTextNewSelectionInsensitive() {
+    public void testTextNewSelectionInsensitive() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 

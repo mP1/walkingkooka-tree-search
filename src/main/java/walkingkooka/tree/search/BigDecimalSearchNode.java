@@ -77,12 +77,12 @@ public final class BigDecimalSearchNode extends SearchNodeLeaf<BigDecimal> {
     }
 
     @Override
-    final boolean canBeEqual(final Object other) {
+    boolean canBeEqual(final Object other) {
         return other instanceof BigDecimalSearchNode;
     }
 
     @Override
-    final void toString1(final StringBuilder b) {
+    void toString1(final StringBuilder b) {
         b.append(this.value());
     }
 }
