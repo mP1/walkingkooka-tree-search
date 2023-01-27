@@ -28,7 +28,7 @@ public final class SearchQueryParentBinarySearchQueryContextTest implements Clas
     }
 
     @Override
-    public final JavaVisibility typeVisibility() {
+    public JavaVisibility typeVisibility() {
         return JavaVisibility.PACKAGE_PRIVATE;
     }
 }

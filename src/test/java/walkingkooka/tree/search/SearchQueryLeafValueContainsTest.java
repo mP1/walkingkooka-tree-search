@@ -66,40 +66,40 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     // LocalDateTime......................................................................................
 
     @Test
-    public final void testLocalDateTime() {
+    public void testLocalDateTime() {
         this.querySensitiveSelectAndCheck(this.localDateTimeNode(DATETIME));
     }
 
     // LocalTime......................................................................................
 
     @Test
-    public final void testLocalTime() {
+    public void testLocalTime() {
         this.querySensitiveSelectAndCheck(this.localTimeNode(TIME));
     }
 
     // Long......................................................................................
 
     @Test
-    public final void testLong() {
+    public void testLong() {
         this.querySensitiveSelectAndCheck(this.longNode(VALUE));
     }
 
     // Text......................................................................................
 
     @Test
-    public final void testTextAbsent() {
+    public void testTextAbsent() {
         this.querySelectAndFail(this.textQueryValue("$")
                         .contains(SENSITIVITY),
                 this.textNode(TEXT));
     }
 
     @Test
-    public final void testText() {
+    public void testText() {
         this.querySensitiveSelectAndCheck(this.textNode(TEXT));
     }
 
     @Test
-    public final void testTextMultiple() {
+    public void testTextMultiple() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -116,7 +116,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextMultiple2() {
+    public void testTextMultiple2() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -133,7 +133,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextContainsOrNotEquals() {
+    public void testTextContainsOrNotEquals() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -152,7 +152,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextContainsOrNotEquals2() {
+    public void testTextContainsOrNotEquals2() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -170,7 +170,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextContainsOrContains() {
+    public void testTextContainsOrContains() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -188,7 +188,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextContainsOrContains2() {
+    public void testTextContainsOrContains2() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -206,7 +206,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextContainsAndContains() {
+    public void testTextContainsAndContains() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -226,19 +226,19 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     // Text Insensitive.................................................................................................
 
     @Test
-    public final void testTextInsensitiveAbsent() {
+    public void testTextInsensitiveAbsent() {
         this.querySelectAndFail(this.textQueryValue("$")
                         .contains(CaseSensitivity.INSENSITIVE),
                 this.textNode(TEXT));
     }
 
     @Test
-    public final void testTextInsensitive() {
+    public void testTextInsensitive() {
         this.queryInsensitiveSelectAndCheck(this.textNode(TEXT));
     }
 
     @Test
-    public final void testTextInsensitiveMultiple() {
+    public void testTextInsensitiveMultiple() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 
@@ -253,7 +253,7 @@ public final class SearchQueryLeafValueContainsTest extends SearchQueryLeafTestC
     }
 
     @Test
-    public final void testTextInsensitiveMultiple2() {
+    public void testTextInsensitiveMultiple2() {
         final SearchNode before = this.before();
         final SearchNode after = this.after();
 

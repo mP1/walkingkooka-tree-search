@@ -33,27 +33,27 @@ final class DoubleSearchQueryValueSearchQueryTester extends SearchQueryValueSear
     }
 
     @Override
-    final boolean test(final BigDecimalSearchNode node) {
+    boolean test(final BigDecimalSearchNode node) {
         return false;
     }
 
     @Override
-    final boolean test(final BigIntegerSearchNode node) {
+    boolean test(final BigIntegerSearchNode node) {
         return false;
     }
 
     @Override
-    final boolean test(final DoubleSearchNode node) {
+    boolean test(final DoubleSearchNode node) {
         return this.predicate.test(this.value, node.value());
     }
 
     @Override
-    final boolean test(final LongSearchNode node) {
+    boolean test(final LongSearchNode node) {
         return false;
     }
 
     @Override
-    final boolean test(final TextSearchNode node) {
+    boolean test(final TextSearchNode node) {
         return false;
     }
 

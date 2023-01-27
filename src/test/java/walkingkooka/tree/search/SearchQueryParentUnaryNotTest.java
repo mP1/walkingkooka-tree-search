@@ -23,7 +23,7 @@ import walkingkooka.text.CaseSensitivity;
 public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCase<SearchQueryParentUnaryNot> {
 
     @Test
-    public final void testBigDecimal() {
+    public void testBigDecimal() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE);
         final SearchQuery query = this.bigDecimalQueryValue(VALUE_LT).greaterThan()
                 .and(this.bigDecimalQueryValue(VALUE_GT).lessThan())
@@ -33,7 +33,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testBigInteger() {
+    public void testBigInteger() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE);
         final SearchQuery query = this.bigIntegerQueryValue(VALUE_LT).greaterThan()
                 .and(this.bigIntegerQueryValue(VALUE_GT).lessThan())
@@ -43,7 +43,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testDouble() {
+    public void testDouble() {
         final DoubleSearchNode node = this.doubleNode(VALUE);
         final SearchQuery query = this.doubleQueryValue(VALUE_LT).greaterThan()
                 .and(this.doubleQueryValue(VALUE_GT).lessThan())
@@ -53,7 +53,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testLocalDate() {
+    public void testLocalDate() {
         final LocalDateSearchNode node = this.localDateNode(DATE);
         final SearchQuery query = this.localDateQueryValue(DATE_LT).greaterThan()
                 .and(this.localDateQueryValue(DATE_GT).lessThan())
@@ -63,7 +63,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testLocalDateTime() {
+    public void testLocalDateTime() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME);
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME_LT).greaterThan()
                 .and(this.localDateTimeQueryValue(DATETIME_GT).lessThan())
@@ -73,7 +73,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testLocalTime() {
+    public void testLocalTime() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME);
         final SearchQuery query = this.localTimeQueryValue(TIME_LT).greaterThan()
                 .and(this.localTimeQueryValue(TIME_GT).lessThan())
@@ -83,7 +83,7 @@ public final class SearchQueryParentUnaryNotTest extends SearchQueryParentTestCa
     }
 
     @Test
-    public final void testLong() {
+    public void testLong() {
         final LongSearchNode node = this.longNode(VALUE);
         final SearchQuery query = this.longQueryValue(VALUE_LT).greaterThan()
                 .and(this.longQueryValue(VALUE_GT).lessThan())

@@ -47,47 +47,47 @@ final class SearchQueryLeafValueContains extends SearchQueryLeaf<TextSearchQuery
     }
 
     @Override
-    final void visit(final BigDecimalSearchNode node, final SearchQueryContext context) {
+    void visit(final BigDecimalSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final BigIntegerSearchNode node, final SearchQueryContext context) {
+    void visit(final BigIntegerSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final DoubleSearchNode node, final SearchQueryContext context) {
+    void visit(final DoubleSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final LocalDateSearchNode node, final SearchQueryContext context) {
+    void visit(final LocalDateSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context) {
+    void visit(final LocalDateTimeSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final LocalTimeSearchNode node, final SearchQueryContext context) {
+    void visit(final LocalTimeSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final LongSearchNode node, final SearchQueryContext context) {
+    void visit(final LongSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 
     @Override
-    final void visit(final MetaSearchNode node, final SearchQueryContext context) {
+    void visit(final MetaSearchNode node, final SearchQueryContext context) {
         node.select(this, context);
     }
 
     @Override
-    final void visit(final TextSearchNode node, final SearchQueryContext context) {
+    void visit(final TextSearchNode node, final SearchQueryContext context) {
         this.visit0(node, context);
     }
 

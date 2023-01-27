@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinaryTestCase<SearchQueryParentBinaryOr> {
 
     @Test
-    public final void testNeither() {
+    public void testNeither() {
         final BigDecimalSearchNode node = this.bigDecimalNode(VALUE);
 
         final SearchQuery query = this.bigDecimalQueryValue(VALUE_LT).equalsQuery()
@@ -32,7 +32,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
     }
 
     @Test
-    public final void testBoth() {
+    public void testBoth() {
         final BigIntegerSearchNode node = this.bigIntegerNode(VALUE);
 
         final SearchQuery query = this.bigIntegerQueryValue(VALUE_LT).greaterThan()
@@ -42,7 +42,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
     }
 
     @Test
-    public final void testOnlyLeft() {
+    public void testOnlyLeft() {
         final DoubleSearchNode node = this.doubleNode(VALUE);
 
         final SearchQuery query = this.doubleQueryValue(VALUE).equalsQuery()
@@ -53,7 +53,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
 
 
     @Test
-    public final void testOnlyRight() {
+    public void testOnlyRight() {
         final LongSearchNode node = this.longNode(VALUE);
 
         final SearchQuery query = this.longQueryValue(VALUE_LT).equalsQuery()
@@ -63,7 +63,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
     }
 
     @Test
-    public final void testBothLocalDate() {
+    public void testBothLocalDate() {
         final LocalDateSearchNode node = this.localDateNode(DATE);
 
         final SearchQuery query = this.localDateQueryValue(DATE_LT).greaterThan()
@@ -73,7 +73,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
     }
 
     @Test
-    public final void testBothLocalDateTime() {
+    public void testBothLocalDateTime() {
         final LocalDateTimeSearchNode node = this.localDateTimeNode(DATETIME);
 
         final SearchQuery query = this.localDateTimeQueryValue(DATETIME_LT).greaterThan()
@@ -83,7 +83,7 @@ public final class SearchQueryParentBinaryOrTest extends SearchQueryParentBinary
     }
 
     @Test
-    public final void testBothLocalTime() {
+    public void testBothLocalTime() {
         final LocalTimeSearchNode node = this.localTimeNode(TIME);
 
         final SearchQuery query = this.localTimeQueryValue(TIME_LT).greaterThan()

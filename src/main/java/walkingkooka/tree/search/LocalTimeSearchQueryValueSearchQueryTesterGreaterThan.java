@@ -38,7 +38,7 @@ final class LocalTimeSearchQueryValueSearchQueryTesterGreaterThan extends LocalT
     }
 
     @Override
-    final boolean test(final LocalTimeSearchNode node) {
+    boolean test(final LocalTimeSearchNode node) {
         return node.value().isAfter(this.value);
     }
 

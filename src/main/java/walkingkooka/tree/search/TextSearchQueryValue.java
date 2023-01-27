@@ -81,12 +81,12 @@ public final class TextSearchQueryValue extends SearchQueryValue {
     private final String value;
 
     @Override
-    final String text() {
+    String text() {
         return this.value;
     }
 
     @Override
-    final String value() {
+    String value() {
         return this.text();
     }
 

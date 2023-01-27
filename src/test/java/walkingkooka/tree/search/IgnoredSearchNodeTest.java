@@ -67,7 +67,7 @@ public final class IgnoredSearchNodeTest extends SearchNodeParentTestCase<Ignore
     }
 
     @Test
-    public final void testReplaceAll() {
+    public void testReplaceAll() {
         final IgnoredSearchNode node = this.createSearchNode();
         final SearchNode replace = this.replaceNode();
         this.checkEquals(replace.selected(), node.replace(0, node.text().length(), replace));

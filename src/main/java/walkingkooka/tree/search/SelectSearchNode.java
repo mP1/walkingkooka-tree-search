@@ -79,7 +79,7 @@ public final class SelectSearchNode extends SearchNodeParent2 {
      * While copying unwraps any {@link IgnoredSearchNode}
      */
     @Override
-    final List<SearchNode> copyChildren(final List<SearchNode> children) {
+    List<SearchNode> copyChildren(final List<SearchNode> children) {
         return Lists.immutable(children.stream()
                 .map(SelectSearchNode::maybeUnwrap)
                 .collect(Collectors.toList()));
@@ -126,8 +126,7 @@ public final class SelectSearchNode extends SearchNodeParent2 {
                 .selected();
     }
 
-    @Override
-    final SearchNode extract0(final int beginOffset, final int endOffset, final String text) {
+    @Override SearchNode extract0(final int beginOffset, final int endOffset, final String text) {
         return this.text1(beginOffset, endOffset, text).selected();
     }
 

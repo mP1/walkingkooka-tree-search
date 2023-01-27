@@ -30,7 +30,7 @@ final class SearchQueryParentBinaryOr extends SearchQueryParentBinary {
     }
 
     @Override
-    final SearchQueryParentOrSearchQueryContext context(final SearchQueryContext context) {
+    SearchQueryParentOrSearchQueryContext context(final SearchQueryContext context) {
         return SearchQueryParentOrSearchQueryContext.with(context, this.right);
     }
 

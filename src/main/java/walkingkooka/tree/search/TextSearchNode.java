@@ -77,12 +77,12 @@ public final class TextSearchNode extends SearchNodeLeaf<String> {
     }
 
     @Override
-    final boolean canBeEqual(final Object other) {
+    boolean canBeEqual(final Object other) {
         return other instanceof TextSearchNode;
     }
 
     @Override
-    final void toString1(final StringBuilder b) {
+    void toString1(final StringBuilder b) {
         b.append(CharSequences.quoteAndEscape(this.value()));
     }
 }

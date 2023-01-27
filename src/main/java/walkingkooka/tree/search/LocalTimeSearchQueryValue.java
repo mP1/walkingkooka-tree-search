@@ -62,12 +62,12 @@ public final class LocalTimeSearchQueryValue extends SearchQueryValue {
     private final LocalTime value;
 
     @Override
-    final String text() {
+    String text() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    final LocalTime value() {
+    LocalTime value() {
         return this.value;
     }
 

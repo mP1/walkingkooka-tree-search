@@ -68,7 +68,7 @@ public final class SearchNodeName implements Name,
     // Object..........................................................................................................
 
     @Override
-    public final int hashCode() {
+    public int hashCode() {
         return CASE_SENSITIVITY.hash(this.name);
     }
 

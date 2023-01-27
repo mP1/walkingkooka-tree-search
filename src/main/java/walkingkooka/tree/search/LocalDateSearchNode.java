@@ -78,12 +78,12 @@ public final class LocalDateSearchNode extends SearchNodeLeaf<LocalDate> {
     }
 
     @Override
-    final boolean canBeEqual(final Object other) {
+    boolean canBeEqual(final Object other) {
         return other instanceof LocalDateSearchNode;
     }
 
     @Override
-    final void toString1(final StringBuilder b) {
+    void toString1(final StringBuilder b) {
         b.append(DateTimeFormatter.ISO_LOCAL_DATE.format(this.value()));
     }
 }

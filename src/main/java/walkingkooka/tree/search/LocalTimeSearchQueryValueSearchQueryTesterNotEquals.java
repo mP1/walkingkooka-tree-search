@@ -38,7 +38,7 @@ final class LocalTimeSearchQueryValueSearchQueryTesterNotEquals extends LocalTim
     }
 
     @Override
-    final boolean test(final LocalTimeSearchNode node) {
+    boolean test(final LocalTimeSearchNode node) {
         return !this.value.equals(node.value());
     }
 
