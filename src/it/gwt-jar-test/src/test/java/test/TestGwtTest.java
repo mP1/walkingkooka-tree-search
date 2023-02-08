@@ -3,6 +3,7 @@ package test;
 import com.google.gwt.junit.client.GWTTestCase;
 
 import walkingkooka.collect.list.Lists;
+import walkingkooka.j2cl.locale.LocaleAware;
 import walkingkooka.predicate.character.CharPredicates;
 import walkingkooka.text.CaseSensitivity;
 import walkingkooka.text.cursor.TextCursors;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 
 import java.math.MathContext;
 
+@LocaleAware
 public class TestGwtTest extends GWTTestCase {
 
     @Override
