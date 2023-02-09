@@ -33,6 +33,7 @@ import walkingkooka.tree.search.SearchQuery;
 import walkingkooka.tree.search.SearchQueryValue;
 import walkingkooka.tree.search.SequenceSearchNode;
 
+import java.time.LocalTime;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -41,11 +42,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class Sample {
     public static void main(final String[] args) {
+        new Sample();
+    }
+
+    public Sample() {
+        testQueryText();
+        testCreateQueryTime();
+    }
+
+    public void testQueryText() {
         final String input = "apple banana carrot dog egg";
 
         // boring tokenize on space...
-        final Parser<ParserContext> words = Parsers.stringCharPredicate(CharPredicates.letterOrDigit(), 1, 100);
-        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(CharPredicates.whitespace(), 1, 100);
+        final Parser<ParserContext> words = Parsers.stringCharPredicate(
+                CharPredicates.letterOrDigit(),
+                1,
+                100
+        );
+        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(
+                CharPredicates.whitespace(),
+                1,
+                100
+        );
         final Parser<ParserContext> other = Parsers.stringCharPredicate(
                 CharPredicates.whitespace()
                         .or(CharPredicates.letterOrDigit())
@@ -53,8 +71,10 @@ public final class Sample {
         );
 
         final Parser<ParserContext> parser = Parsers.repeating(
-                        Parsers.alternatives(Lists.of(words, whitespace, other)))
-                .orReport(ParserReporters.basic());
+                Parsers.alternatives(
+                        Lists.of(words, whitespace, other)
+                )
+        ).orReport(ParserReporters.basic());
 
         final Optional<ParserToken> tokens = parser.parse(
                 TextCursors.charSequence(input),
@@ -93,6 +113,13 @@ public final class Sample {
                 expected,
                 replaced.text(),
                 "search and replace failed\n" + input
+        );
+    }
+
+    public void testCreateQueryTime() {
+        SearchNode.localTime(
+                "12:58:59",
+                LocalTime.of(12, 58, 59)
         );
     }
 }
