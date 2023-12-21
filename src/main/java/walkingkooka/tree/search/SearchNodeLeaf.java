@@ -135,7 +135,12 @@ abstract class SearchNodeLeaf<V> extends SearchNode implements Value<V> {
 
     public final SearchNode setChildren(final List<SearchNode> children) {
         Objects.requireNonNull(children, "children");
-        throw new UnsupportedOperationException();
+
+        if (false == children.isEmpty()) {
+            throw new UnsupportedOperationException();
+        }
+
+        return this;
     }
 
     @Override
