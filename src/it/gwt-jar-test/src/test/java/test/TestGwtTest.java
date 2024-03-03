@@ -99,9 +99,9 @@ public class TestGwtTest extends GWTTestCase {
         final String expected = "apple zebra carrot dog egg";
 
         assertEquals(
+                "search and replace failed\n" + input,
                 expected,
-                replaced.text(),
-                "search and replace failed\n" + input
+                replaced.text()
         );
     }
 
