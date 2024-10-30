@@ -216,7 +216,9 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
 
     @Override
     public final Predicate<String> isMethodIgnoreMethodFilter() {
-        return (m) -> m.equals("isRoot") || m.equals("isEmpty");
+        return (m) -> m.equals("isRoot") ||
+                m.equals("isEmpty") ||
+                m.equals("isNotEmpty");
     }
 
     // TypeNameTesting..................................................................................................
