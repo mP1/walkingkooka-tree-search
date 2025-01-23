@@ -47,9 +47,9 @@ public class JunitTest {
         final String input = "apple banana carrot dog egg";
 
         // boring tokenize on space...
-        final Parser<ParserContext> words = Parsers.stringCharPredicate(CharPredicates.letterOrDigit(), 1, 100).cast();
-        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(CharPredicates.whitespace(), 1, 100).cast();
-        final Parser<ParserContext> other = Parsers.stringCharPredicate(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
+        final Parser<ParserContext> words = Parsers.charPredicateString(CharPredicates.letterOrDigit(), 1, 100).cast();
+        final Parser<ParserContext> whitespace = Parsers.charPredicateString(CharPredicates.whitespace(), 1, 100).cast();
+        final Parser<ParserContext> other = Parsers.charPredicateString(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
 
         final Parser<ParserContext> parser = Parsers.repeating(
                 Parsers.alternatives(Lists.of(words, whitespace, other)))
