@@ -54,17 +54,17 @@ public final class Sample {
         final String input = "apple banana carrot dog egg";
 
         // boring tokenize on space...
-        final Parser<ParserContext> words = Parsers.stringCharPredicate(
+        final Parser<ParserContext> words = Parsers.charPredicateString(
                 CharPredicates.letterOrDigit(),
                 1,
                 100
         );
-        final Parser<ParserContext> whitespace = Parsers.stringCharPredicate(
+        final Parser<ParserContext> whitespace = Parsers.charPredicateString(
                 CharPredicates.whitespace(),
                 1,
                 100
         );
-        final Parser<ParserContext> other = Parsers.stringCharPredicate(
+        final Parser<ParserContext> other = Parsers.charPredicateString(
                 CharPredicates.whitespace()
                         .or(CharPredicates.letterOrDigit())
                         .negate(), 1, 100
