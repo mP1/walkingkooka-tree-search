@@ -109,9 +109,14 @@ public final class SearchQueryTest implements ClassTesting2<SearchQuery>,
         final Parser<ParserContext> whitespace = Parsers.charPredicateString(CharPredicates.whitespace(), 1, 100).cast();
         final Parser<ParserContext> other = Parsers.charPredicateString(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
 
-        final Parser<ParserContext> parser = Parsers.repeating(
-                        Parsers.alternatives(Lists.of(words, whitespace, other)))
-                .orReport(ParserReporters.basic());
+        final Parser<ParserContext> parser = Parsers.alternatives(
+                Lists.of(
+                    words,
+                    whitespace,
+                    other
+                )
+            ).repeating()
+            .orReport(ParserReporters.basic());
 
         final Optional<ParserToken> tokens = parser.parse(TextCursors.charSequence(input), new FakeParserContext());
 
