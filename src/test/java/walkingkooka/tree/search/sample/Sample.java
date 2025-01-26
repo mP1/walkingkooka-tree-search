@@ -70,11 +70,14 @@ public final class Sample {
                         .negate(), 1, 100
         );
 
-        final Parser<ParserContext> parser = Parsers.repeating(
-                Parsers.alternatives(
-                        Lists.of(words, whitespace, other)
+        final Parser<ParserContext> parser = Parsers.alternatives(
+                Lists.of(
+                    words,
+                    whitespace,
+                    other
                 )
-        ).orReport(ParserReporters.basic());
+            ).repeating()
+            .orReport(ParserReporters.basic());
 
         final Optional<ParserToken> tokens = parser.parse(
                 TextCursors.charSequence(input),

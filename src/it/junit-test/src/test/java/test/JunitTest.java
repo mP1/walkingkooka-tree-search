@@ -43,22 +43,43 @@ import java.util.stream.Collectors;
 public class JunitTest {
 
     @Test
-    public void testTokenizeQueryReplace() {
+    public void testQueryText() {
         final String input = "apple banana carrot dog egg";
 
         // boring tokenize on space...
-        final Parser<ParserContext> words = Parsers.charPredicateString(CharPredicates.letterOrDigit(), 1, 100).cast();
-        final Parser<ParserContext> whitespace = Parsers.charPredicateString(CharPredicates.whitespace(), 1, 100).cast();
-        final Parser<ParserContext> other = Parsers.charPredicateString(CharPredicates.whitespace().or(CharPredicates.letterOrDigit()).negate(), 1, 100).cast();
+        final Parser<ParserContext> words = Parsers.charPredicateString(
+            CharPredicates.letterOrDigit(),
+            1,
+            100
+        );
+        final Parser<ParserContext> whitespace = Parsers.charPredicateString(
+            CharPredicates.whitespace(),
+            1,
+            100
+        );
+        final Parser<ParserContext> other = Parsers.charPredicateString(
+            CharPredicates.whitespace()
+                .or(CharPredicates.letterOrDigit())
+                .negate(), 1, 100
+        );
 
-        final Parser<ParserContext> parser = Parsers.repeating(
-                Parsers.alternatives(Lists.of(words, whitespace, other)))
-                .orReport(ParserReporters.basic());
+        final Parser<ParserContext> parser = Parsers.alternatives(
+                Lists.of(
+                    words,
+                    whitespace,
+                    other
+                )
+            ).repeating()
+            .orReport(ParserReporters.basic());
 
-        final Optional<ParserToken> tokens = parser.parse(TextCursors.charSequence(input), new FakeParserContext());
+        final Optional<ParserToken> tokens = parser.parse(
+            TextCursors.charSequence(input),
+            new FakeParserContext()
+        );
 
         // convert into SearchTextNodes
-        final SequenceSearchNode nodes = SearchNode.sequence(tokens.get()
+        final SequenceSearchNode nodes = SearchNode.sequence(
+            tokens.get()
                 .cast(RepeatedParserToken.class)
                 .flat()
                 .value()
@@ -72,11 +93,11 @@ public class JunitTest {
 
         final Function<SequenceSearchNode, SearchNode> queryAndReplace = (sequenceNode -> {
             final SearchQuery query = SearchQueryValue.text(searchFor)
-                    .equalsQuery(caseSensitivity);
+                .equalsQuery(caseSensitivity);
 
             // query and replace
             return query.select(sequenceNode)
-                    .replaceSelected((s) -> SearchNode.text(replaceWith, replaceWith));
+                .replaceSelected((s) -> SearchNode.text(replaceWith, replaceWith));
         });
 
         final SearchNode replaced = queryAndReplace.apply(nodes);
@@ -84,8 +105,10 @@ public class JunitTest {
         // convert SearchNode back into text.
         final String expected = "apple zebra carrot dog egg";
 
-        Assert.assertEquals("search and replace failed\n" + input,
-                expected,
-                replaced.text());
+        Assert.assertEquals(
+            "search and replace failed\n" + input,
+            expected,
+            replaced.text()
+        );
     }
 }
