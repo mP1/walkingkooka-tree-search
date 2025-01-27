@@ -26,7 +26,7 @@ import walkingkooka.tree.Node;
 import walkingkooka.tree.TraversableHasTextOffset;
 import walkingkooka.tree.expression.ExpressionFunctionName;
 import walkingkooka.tree.select.NodeSelector;
-import walkingkooka.tree.select.parser.NodeSelectorExpressionParserToken;
+import walkingkooka.tree.select.parser.ExpressionNodeSelectorParserToken;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -565,9 +565,9 @@ public abstract class SearchNode implements Node<SearchNode, SearchNodeName, Sea
     }
 
     /**
-     * Creates a {@link NodeSelector} for {@link SearchNode} from a {@link NodeSelectorExpressionParserToken}.
+     * Creates a {@link NodeSelector} for {@link SearchNode} from a {@link ExpressionNodeSelectorParserToken}.
      */
-    public static NodeSelector<SearchNode, SearchNodeName, SearchNodeAttributeName, String> nodeSelectorExpressionParserToken(final NodeSelectorExpressionParserToken token,
+    public static NodeSelector<SearchNode, SearchNodeName, SearchNodeAttributeName, String> nodeSelectorExpressionParserToken(final ExpressionNodeSelectorParserToken token,
                                                                                                                               final Predicate<ExpressionFunctionName> functions) {
         return NodeSelector.parserToken(token,
                 n -> SearchNodeName.with(n.value()),
