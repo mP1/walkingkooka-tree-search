@@ -197,7 +197,7 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
         return JavaVisibility.PUBLIC;
     }
 
-    // IsMethodTesting.................................................................................................
+    // IsMethodTesting..................................................................................................
 
     @Override
     public final N createIsMethodObject() {
@@ -205,20 +205,19 @@ public abstract class SearchNodeTestCase<N extends SearchNode> implements ClassT
     }
 
     @Override
-    public final String isMethodTypeNamePrefix() {
-        return "";
-    }
-
-    @Override
-    public final String isMethodTypeNameSuffix() {
-        return SearchNode.class.getSimpleName();
-    }
-
-    @Override
     public final Predicate<String> isMethodIgnoreMethodFilter() {
         return (m) -> m.equals("isRoot") ||
-                m.equals("isEmpty") ||
-                m.equals("isNotEmpty");
+            m.equals("isEmpty") ||
+            m.equals("isNotEmpty");
+    }
+
+    @Override
+    public final String toIsMethodName(final String typeName) {
+        return this.toIsMethodNameWithPrefixSuffix(
+            typeName,
+            "",
+            SearchNode.class.getSimpleName()
+        );
     }
 
     // TypeNameTesting..................................................................................................
